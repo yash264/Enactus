@@ -10,7 +10,7 @@ const corsOptions ={
   origin: "https://enactus-meta.vercel.app",
   methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
   credentials: true,
-  "Access-Control-Allow-Credentials": "*",
+  "Access-Control-Allow-Origin": "*",
 }; 
 
 app.use(cors(corsOptions));
