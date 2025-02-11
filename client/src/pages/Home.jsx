@@ -3,6 +3,7 @@ import AnimatedTestimonials from "../components/Home/AnimatedTestimonials.jsx";
 import React from "react";
 import HeroParallax, { Header } from "../components/Home/AnimateSlider.jsx";
 import { FlipWords } from "../components/Home/UI/Flip-words.jsx";
+import Stats from "../components/Home/Stats.jsx";
 
 import img1 from "../assets/Home/portfolio-1.jpg";
 import img2 from "../assets/Home/portfolio-2.jpg";
@@ -38,7 +39,9 @@ const HomePage = () => {
           </button>
         </div>
       </ImagesSlider>
-      <div className="py-20 md:py-28 lg:py-32 h-full"><Details/></div>
+
+      <div className="py-20 md:py-24 lg:py-20 h-full"><Stats/></div>
+      <div className="py-20 md:py-24 lg:py-16 h-full"><Details/></div>
       <div className="pb-16 md:pb-24 lg:pb-28 h-full"><ProjectCarousel /></div>
 
       {/* <div className="mt-16 mb-20 px-2 py-2">
