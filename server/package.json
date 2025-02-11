@@ -16,6 +16,7 @@
     "express": "^4.21.2",
     "express-mongoose": "^0.1.0",
     "mongoose": "^8.9.6",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.9",
     "razorpay": "^2.9.5"
   }
