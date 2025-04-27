@@ -5,7 +5,7 @@ const TextWrapper = () => {
         <div className="mt-8 md:mt-0 "> {/* Add margin-top for smaller screens */}
             <div className="text-base col-lg-7 bg-white p-6 rounded-xl shadow-lg">
 
-                <p className="text-3xl md:text-3xl text-zinc-700 font-semibold text-sky-600">
+                <p className="text-3xl md:text-3xl font-semibold text-sky-600">
                     Who are We ?
                 </p>
 

@@ -12,9 +12,9 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="relative" >
+    <div className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20" >
     
-      <div className="text-center my-6 px-4">
+      <div className="text-center px-4">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-black tracking-tight mb-3">
           Know About Us !!
         </h1>

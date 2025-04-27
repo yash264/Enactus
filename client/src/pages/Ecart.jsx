@@ -7,16 +7,6 @@ import { HiOutlineX } from "react-icons/hi";
 import {asset} from '../images/asset.js'
 import { ToastContainer, toast } from 'react-toastify';
 
-
-
-
-
-
-
- 
-
-
-
 const products = [
   {
     id: 1,
@@ -192,7 +182,7 @@ const ECart = () => {
   );
 
   return (
-    <div className="min-h-screen my-10 bg-zinc-50 mx-10">
+    <div className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20">
       <div className="relative py-5 px-4 mb-1 overflow-hidden">
         <div className="container mx-auto max-w-4xl relative">
           <motion.div

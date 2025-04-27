@@ -85,7 +85,7 @@ const DepartmentCard = ({ title, path, image, icon: Icon, description }) => {
 
 const Selection = () => {
   return (
-    <div className="min-h-screen bg-zinc-50 py-12">
+    <div className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-black tracking-tight mb-3">

@@ -25,7 +25,7 @@ const Content = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="min-h-screen bg-zinc-50"
+      className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20"
     >
       <Department tag="CONTENT TEAM" des="The storytellers behind every impactful narrative"/>
       
