@@ -7,7 +7,6 @@ import { FaTwitter } from "react-icons/fa";
 import { BsCalendar2Check } from "react-icons/bs";
 import enactusLogo from '../../assets/logo/Enactus.png';
 import { BsArrowUpCircleFill } from "react-icons/bs";
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Footer() {
 

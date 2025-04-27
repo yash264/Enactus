@@ -11,7 +11,7 @@ const Navbar = () => {
     { name: 'About Us', link: '/about' },
     { name: 'Projects', link: '/project' },
     { name: 'Team', link: '/team' },
-    { name: 'ContactUs', link: '/contact-us' },
+    { name: 'ContactUs', link: '#contactUs' },
     { name: 'E Cart', link: '/ecart' },
     { name: 'Enactus Worldwide', link: 'https://enactus.org/' },
   ];
@@ -33,13 +33,6 @@ const Navbar = () => {
       document.removeEventListener('touchstart', handleClickOutside);
     };
   }, []);
-
-  const scrollToFooter = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth", // Smooth scroll effect
-    });
-  }
 
   return (
     <nav className="bg-gradient-to-r from-zinc-800 to-zinc-900 text-white shadow-md fixed top-0 left-0 w-full z-50">
@@ -75,18 +68,15 @@ const Navbar = () => {
               className="relative group hover:scale-105 transition-transform"
             >
               {
-                link.name === 'ContactUs' ?
-                  <a onClick={scrollToFooter} style={{ cursor: 'pointer' }} >
-                    {link.name}
-                  </a> :
-                  <a
-                    href={link.link}
-                    target={link.name === 'Enactus Worldwide' ? '_blank' : '_self'}
-                    rel={link.name === 'Enactus Worldwide' ? 'noopener noreferrer' : undefined}
-                    className="hover:text-enactusYellow relative z-10"
-                  >
-                    {link.name}
-                  </a>
+
+                <a
+                  href={link.link}
+                  target={link.name === 'Enactus Worldwide' ? '_blank' : '_self'}
+                  rel={link.name === 'Enactus Worldwide' ? 'noopener noreferrer' : undefined}
+                  className="hover:text-enactusYellow relative z-10"
+                >
+                  {link.name}
+                </a>
               }
               <div className="absolute bottom-0 left-0 w-full h-[2px] bg-yellow-500 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"></div>
             </li>
@@ -103,19 +93,15 @@ const Navbar = () => {
           {Links.map((link) => (
             <li key={link.name}>
               {
-                link.name === 'ContactUs' ?
-                  <a onClick={scrollToFooter} style={{ cursor: 'pointer' }} >
-                    {link.name}
-                  </a> :
-                  <a
-                    href={link.link}
-                    target={link.name === 'Enactus Worldwide' ? '_blank' : '_self'}
-                    rel={link.name === 'Enactus Worldwide' ? 'noopener noreferrer' : undefined}
-                    className="hover:text-yellow-500 hover:scale-105 transition-transform"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {link.name}
-                  </a>
+                <a
+                  href={link.link}
+                  target={link.name === 'Enactus Worldwide' ? '_blank' : '_self'}
+                  rel={link.name === 'Enactus Worldwide' ? 'noopener noreferrer' : undefined}
+                  className="hover:text-yellow-500 hover:scale-105 transition-transform"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
               }
             </li>
           ))}
