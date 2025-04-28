@@ -7,6 +7,7 @@ import Sponsorship from '../assets/Teams/SPONSORSHIP.jpg'
 import Content from '../assets/Teams/content.jpg'
 import Web from '../assets/Teams/web.jpg'
 import Fild from '../assets/Teams/field.jpg'
+
 const departments = [
   {
     title: "WEB TEAM",

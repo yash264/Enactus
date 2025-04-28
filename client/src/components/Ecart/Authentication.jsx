@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 export const Authentication = () => {
 
-    // Use state to manage user details
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const navigate = useNavigate();
+
     const [userDetails, setUserDetails] = useState({
         countryCode: "",
         phoneNo: "",
-        firstName: "",
-        lastName: ""
     });
-
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const SignInButton = async () => {
 
@@ -23,13 +23,11 @@ export const Authentication = () => {
         document.body.appendChild(script);
 
         const phoneEmailListener = (userObj) => {
-            const { 
-                    user_json_url,
-                    user_country_code, 
-                    user_phone_number,
-                    user_first_name, 
-                    user_last_name 
-                } = userObj;
+            const {
+                user_json_url,
+                user_country_code,
+                user_phone_number,
+            } = userObj;
 
             setIsAuthenticated(true);
 
@@ -37,8 +35,6 @@ export const Authentication = () => {
                 countryCode: user_country_code,
                 phoneNo: user_phone_number,
                 url: user_json_url,
-                firstName: user_first_name,
-                lastName: user_last_name,
             });
 
         };
@@ -51,27 +47,30 @@ export const Authentication = () => {
         };
     };
 
+
     useEffect(() => {
+
         if (!isAuthenticated) {
             SignInButton();
         }
-    }, [isAuthenticated]);
+
+        if (isAuthenticated) {
+            navigate("/buyProduct", {
+                state:
+                {
+                    countryCode: userDetails.countryCode,
+                    phoneNo: userDetails.phoneNo
+                }
+            }
+        );
+        }
+    }, [isAuthenticated, navigate]);
 
     return (
         <React.Fragment>
-            {!isAuthenticated && (
-                <div className="pe_signin_button" data-client-id="18915672557661999725"></div>
-            )}
 
-            {isAuthenticated && (
-                <h4 style={{ lineHeight: "36px" }}>
-                    Phone Authentication Successfull. 
-                    <br />
-                    {userDetails.firstName} {userDetails.lastName}
-                    <br />
-                    {userDetails.countryCode} {userDetails.phoneNo}
-                </h4>
-            )}
+            <div className="pe_signin_button" data-client-id="18915672557661999725"></div>
+
         </React.Fragment>
     );
 };

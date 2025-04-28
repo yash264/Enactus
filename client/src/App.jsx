@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import AboutUs from './pages/About';
 import Project from './pages/Project';
 import ECart from './pages/Ecart';
+import BuyProduct from './pages/BuyProduct';
 import Navbar from './components/General/Navbar';
 import Footer from './components/General/Footer';
 
@@ -28,6 +29,7 @@ function App() {
           <Route path='/project' element={<Project />} />
           <Route path='/team' element={<Selection />} />
           <Route path='/ecart' element={<ECart />} />
+          <Route path='/buyProduct' element={<BuyProduct />} />
 
           <Route path='/webTeam' element={<Web />} />
           <Route path='/reserchAndDevelopment' element={<Reserch />} />
