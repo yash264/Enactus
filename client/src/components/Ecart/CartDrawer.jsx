@@ -35,9 +35,11 @@ const CartDrawer = ({ isOpen, toggleOffCanvas, cartItem, removeCart, updateQuant
                         <p className="text-lg font-bold text-center text-zinc-800">Total: ₹{total.toFixed(2)}</p>
                     </div>
 
-                    <div className="border-t p-2 ml-12">
-                        <Authentication />
-                    </div>
+                    {cartItem.length > 0 && (
+                        <div className="border-t p-2 ml-12">
+                            <Authentication />
+                        </div>
+                    )}
 
                 </motion.div>
             )}

@@ -1,5 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import InputFrom from "../components/BuyProduct/InputFrom";
+import Table from "../components/BuyProduct/Table";
+import Payment from "../components/BuyProduct/Payment";
 
 const BuyProduct = () => {
 
@@ -9,31 +12,19 @@ const BuyProduct = () => {
 
     return (
         <>
-
             <section className="relative min-h-screen bg-background pt-6 md:pt-16 lg:pt-20">
-                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 z-50">
-                    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
-                        <div>
-                            <div className="max-w-lg md:max-w-none">
-                                <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
-                                Your phone number: {countryCode} {phoneNo}
-                                </h2>
-
-                                <p className="mt-4 text-gray-700">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur doloremque saepe
-                                    architecto maiores repudiandae amet perferendis repellendus, reprehenderit voluptas
-                                    sequi.
-                                </p>
-                            </div>
+                <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:items-start md:gap-8">
+                        
+                        <div className="md:col-span-2">
+                            <InputFrom countryCode={countryCode} phoneNo={phoneNo} />
                         </div>
 
-                        <div>
-                            <img
-                                src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                className="rounded"
-                                alt=""
-                            />
+                        <div className="md:col-span-1">
+                                <Table />
+                                <Payment />
                         </div>
+
                     </div>
                 </div>
             </section>
