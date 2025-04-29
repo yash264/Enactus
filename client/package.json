@@ -17,6 +17,8 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "ionicons": "^7.2.2",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
     "lucide-react": "^0.469.0",
     "mdb-react-ui-kit": "^7.2.0",
     "postcss": "^8.4.35",

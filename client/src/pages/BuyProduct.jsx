@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import InputFrom from "../components/BuyProduct/InputFrom";
 import Table from "../components/BuyProduct/Table";
 import Payment from "../components/BuyProduct/Payment";
+import Invoice from "../components/BuyProduct/Invoice";
 
 const BuyProduct = () => {
 
@@ -55,6 +56,19 @@ const BuyProduct = () => {
                                     email={email}
                                     address={address}
                                     total={total}
+                                />
+                            )}
+
+                            {method === "cod" && (
+                                <Invoice
+                                    name={name}
+                                    countryCode={countryCode}
+                                    phoneNo={phoneNo}
+                                    products={products}
+                                    email={email}
+                                    address={address}
+                                    total={total}
+                                    method="Cash on Delivery"
                                 />
                             )}
 
