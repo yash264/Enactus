@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
-const Table = () => {
-
-    const [products, setProducts] = useState([]);
+const Table = ({products, setProducts}) => {
 
     useEffect(() => {
         const storedProducts = localStorage.getItem("cartItem");
