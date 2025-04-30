@@ -40,3 +40,43 @@ export const createOrder = async (req, res) => {
   }
 };
 
+
+export const fetchOrder = async (req, res) => {
+  try {
+
+    const query = req.query.q || "";
+    const searchRegex = new RegExp(query, "i");
+
+    const orders = await Order.find({
+      $or: [
+        { name: searchRegex },
+        { email: searchRegex }
+      ]
+    }).sort({ createdAt: -1 }).lean();
+
+    res.render("home", { orders });
+
+  }
+  catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Order creation failed",
+    });
+  }
+};
+
+export const particularOrder = async (req, res) => {
+  try {
+
+    const details = await Order.findById({ _id: req.params.id }).lean();
+
+    res.render("invoice", { details });
+
+  }
+  catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: "Order creation failed",
+    });
+  }
+};

@@ -12,7 +12,7 @@ const Payment = ({
 
     const handleSubmit = async (transactionId = null) => {
         try {
-            const response = await axios.post('http://localhost:4000/api/createOrder', {
+            const response = await axios.post('http://localhost:4000/createOrder', {
                 name: name,
                 email: email,
                 phoneNo: phoneNo,
