@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import InputFrom from "../components/BuyProduct/InputFrom";
 import Table from "../components/BuyProduct/Table";
 import Payment from "../components/BuyProduct/Payment";
-import Invoice from "../components/BuyProduct/Invoice";
 
 const BuyProduct = () => {
 
@@ -15,6 +14,17 @@ const BuyProduct = () => {
     const [address, setAddress] = useState("")
     const [method, setMethod] = useState("")
     const [products, setProducts] = useState([]);
+    const [formValid, setFormValid] = useState(false);
+
+    useEffect(() => {
+        const isValid =
+            name.trim() &&
+            email.trim() &&
+            phoneNo.trim() &&
+            address.trim();
+
+        setFormValid(Boolean(isValid));
+    }, [name, email, phoneNo, address]);
 
     const total = products.reduce((sum, item) => sum + item.quantity * item.price, 0);
 
@@ -48,29 +58,23 @@ const BuyProduct = () => {
                                 setProducts={setProducts}
                             />
 
-                            {method === "online" && (
-                                <Payment
-                                    name={name}
-                                    countryCode={countryCode}
-                                    phoneNo={phoneNo}
-                                    email={email}
-                                    address={address}
-                                    total={total}
-                                />
-                            )}
 
-                            {method === "cod" && (
-                                <Invoice
-                                    name={name}
-                                    countryCode={countryCode}
-                                    phoneNo={phoneNo}
-                                    products={products}
-                                    email={email}
-                                    address={address}
-                                    total={total}
-                                    method="Cash on Delivery"
-                                />
-                            )}
+                            {formValid === false ?
+                                (
+                                    " "
+                                ) : (
+                                    <Payment
+                                        name={name}
+                                        countryCode={countryCode}
+                                        phoneNo={phoneNo}
+                                        email={email}
+                                        address={address}
+                                        products={products}
+                                        total={total}
+                                        method={method}
+                                    />
+                                )
+                            }
 
                         </div>
 
