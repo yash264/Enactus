@@ -1,5 +1,6 @@
 import React from 'react';
 import Invoice from './Invoice';
+import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 
 const Payment = ({
@@ -8,6 +9,32 @@ const Payment = ({
     address, total,
     products, method
 }) => {
+
+    const handleSubmit = async (transactionId = null) => {
+        try {
+            const response = await axios.post('http://localhost:4000/api/createOrder', {
+                name: name,
+                email: email,
+                phoneNo: phoneNo,
+                address: address,
+                products: products,
+                total: total,
+                method: method,
+                transactionId: transactionId,
+            });
+
+            if(response.data.success===true){
+                toast.success("Order placed Successfully!!", { autoClose: 3000 });
+            }
+            else{
+                toast.error("Some Error Occured.", { autoClose: 3000 });
+            }
+        }
+        catch (error) {
+            toast.error("Some Error Occured.", { autoClose: 3000 });
+            console.error(error);
+        }
+    };
 
     const cashOnDelivery = () => {
         Invoice({
@@ -21,7 +48,8 @@ const Payment = ({
             method: 'cod',
             transactionId: null
         });
-        toast.success("Order placed Successfully!!", { autoClose: 3000 });
+
+        handleSubmit(null);
     };
 
 
@@ -57,7 +85,8 @@ const Payment = ({
                         method: 'online',
                         transactionId: response.razorpay_payment_id
                     });
-                    toast.success("Payment Compleleted Successful!!", { autoClose: 3000 });
+
+                    handleSubmit(response.razorpay_payment_id);
                 },
 
                 prefill: {
@@ -102,7 +131,7 @@ const Payment = ({
                     Place Order (Cash on Delivery)
                 </button>
             )}
-            
+
             <ToastContainer />
         </div>
     );
