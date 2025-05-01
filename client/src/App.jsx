@@ -1,5 +1,7 @@
 import React from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 import Home from './pages/Home';
 import AboutUs from './pages/About';
