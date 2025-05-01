@@ -10,9 +10,11 @@ const Payment = ({
     products, method
 }) => {
 
+    axios.defaults.withCredentials = true;
+
     const handleSubmit = async (transactionId = null) => {
         try {
-            const response = await axios.post('http://localhost:4000/createOrder', {
+            const response = await axios.post('https://enactusserver.onrender.com/createOrder', {
                 name: name,
                 email: email,
                 phoneNo: phoneNo,

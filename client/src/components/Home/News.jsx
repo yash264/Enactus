@@ -5,10 +5,12 @@ const News = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  axios.defaults.withCredentials = true;
+  
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/fetchNews');
+        const response = await axios.get('https://enactusserver.onrender.com/fetchNews');
 
         setArticles(response.data.message.articles);
         setLoading(false);

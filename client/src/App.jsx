@@ -18,7 +18,24 @@ import Field from './pages/Teams/Field';
 import Marketing from './pages/Teams/Marketing';
 
 function App() {
-  const location = useLocation();
+
+  axios.defaults.withCredentials = true;
+
+  const startServer = async () => {
+    try {
+      const response = await axios.get('https://enactusserver.onrender.com/startServer');
+
+      console.log(response.data.message);
+
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    startServer();
+  }, [])
+
   return (
     <>
       <Navbar />
