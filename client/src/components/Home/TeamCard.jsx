@@ -1,30 +1,85 @@
-"use client";
-import { cn } from "../../lib/utils.js";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Member1 from "../../assets/Teams/TeamMembers/ContentTeam/ShreyanshSingh.jpg";
+import Member29 from  "../../assets/Teams/TeamMembers/FieldOfficer/Aditya.jpeg";
+import Member9 from "../../assets/Teams/TeamMembers/WebTeam/Utkarsh.jpg";
 
-function TeamCard({ title, description }) {
+
+export default function TeamCard() {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/team");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
-    <div className="max-w-xs w-full">
-      <div
-        className={cn(
-          "group w-full cursor-pointer overflow-hidden relative card h-80 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800",
-          "bg-[url(https://i.pinimg.com/736x/8c/f0/e3/8cf0e31f6dc86beafefbffc4ea8000dd.jpg)] bg-cover",
-          "before:bg-[url(https://i.pinimg.com/originals/c6/d0/7c/c6d07c8e5fd5eabee04c96694e370432.gif)] before:fixed before:inset-0 before:opacity-0 before:z-[-1]",
-          "hover:bg-[url(https://i.pinimg.com/originals/c6/d0/7c/c6d07c8e5fd5eabee04c96694e370432.gif)] hover:bg-center hover:bg-cover",
-          "hover:after:content-[''] hover:after:absolute hover:after:inset-0 hover:after:bg-black hover:after:opacity-50",
-          "transition-all duration-500"
-        )}
-      >
-        <div className="text relative z-50">
-          <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
-            {title}
-          </h1>
-          <p className="font-normal text-base text-gray-50 relative my-4">
-            {description}
-          </p>
+    <>
+      <div className="grid grid-cols-1 gap-4 m-6 lg:grid-cols-3 lg:gap-8">
+        <div className="rounded bg-gray-300">
+          <article className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
+
+            <img
+              src={Member1}
+              alt="team"
+              className="w-full h-64 object-cover rounded-xl"
+            />
+
+            <div className="bg-white p-4 sm:p-6 text-center">
+
+              <button onClick={handleNavigation}>
+                <h3 className="mt-0.5 text-lg">
+                  Shreyansh Singh
+                </h3>
+              </button>
+
+            </div>
+          </article>
+        </div>
+
+        <div className="rounded bg-gray-300">
+          <article className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
+
+            <img
+              src={Member29}
+              alt="team"
+              className="w-full h-64 object-cover rounded-xl"
+            />
+
+            <div className="bg-white p-4 sm:p-6 text-center">
+
+              <button onClick={handleNavigation}>
+                <h3 className="mt-0.5 text-lg text-gray-900">
+                  Aditya Roysha
+                </h3>
+              </button>
+
+            </div>
+          </article>
+        </div>
+
+        <div className="rounded bg-gray-300">
+          <article className="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg">
+
+            <img
+              src={Member9}
+              alt="team"
+              className="w-full h-64 object-cover rounded-xl"
+            />
+
+            <div className="bg-white p-4 sm:p-6 text-center">
+
+              <button onClick={handleNavigation}>
+                <h3 className="mt-0.5 text-lg text-gray-900">
+                  Utkarsh Sharma
+                </h3>
+              </button>
+
+            </div>
+          </article>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
-export default TeamCard;

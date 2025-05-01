@@ -6,12 +6,20 @@ import exphbs from "express-handlebars";
 import moment from "moment";
 import { fileURLToPath } from "url";
 import connectDB from './connection.js';
+
 import orderRoutes from './routes/order.routes.js';
+import newsRoutes from './routes/news.routes.js';
 
 const PORT = process.env.PORT
 dotenv.config();
 const app = express();
 connectDB();
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+  credentials: true,
+};
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -25,18 +33,11 @@ app.engine("hbs", exphbs.engine({
   helpers: {
     multiply: (a, b) => a * b,
     formatDate: (date) => moment(date).format("DD MMM YYYY, hh:mm A"),
-    formatMethod: (method) => method === "cod" ? "Cash on Delivery" : "Online Payment (Razorpay)"
+    formatMethod: (method) => method === "cod" ? "Cash on Delivery" : "Online Payment (via Razorpay)"
   }
 }));
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
-
-
-const corsOptions = {
-  origin: 'http://localhost:3000',
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true,
-};
 
 
 app.use(express.json());
@@ -46,6 +47,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/', orderRoutes);
+app.use('/', newsRoutes);
 
 
 app.get("/", (req, res) => {

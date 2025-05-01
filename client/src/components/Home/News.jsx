@@ -8,23 +8,18 @@ const News = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('https://enactus-server-six.vercel.app/news/fetchNews',
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*', 
-            },
-          }
-        );
+        const response = await axios.get('http://localhost:4000/fetchNews');
+
         setArticles(response.data.message.articles);
         setLoading(false);
-      } catch (error) {
+
+      }catch(error){
         console.log(error);
         setLoading(false);
       }
     };
     fetchNews();
-  }, []);
+  }, [loading]);
 
   if (loading) return <p className="text-center text-lg text-gray-600">Loading news...</p>;
 

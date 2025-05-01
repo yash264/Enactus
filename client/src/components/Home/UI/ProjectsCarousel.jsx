@@ -60,6 +60,7 @@ const Slide = ({
 
   const handleNavigation = () => {
     navigate("/project");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
@@ -87,7 +88,7 @@ const Slide = ({
                 : "none",
           }}>
           <img
-            className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+            className="absolute inset-0 w-[100%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0.5,
             }}
@@ -105,13 +106,13 @@ const Slide = ({
           className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
             current === index ? "opacity-100 visible" : "opacity-0 invisible"
           }`}>
-          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold  relative">
+          <h2 className="text-lg text-sky-400 md:text-2xl lg:text-4xl font-semibold  relative">
             {title}
           </h2>
           <div className="flex justify-center">
             <button
               onClick={handleNavigation}
-              className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+              className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-rose-400 h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
               {button}
             </button>
           </div>
@@ -126,6 +127,7 @@ const CarouselControl = ({
   title,
   handleClick
 }) => {
+
   return (
     <button
       className={`w-10 h-10 flex items-center mx-2 justify-center bg-neutral-200 dark:bg-neutral-800 border-3 border-transparent rounded-full focus:border-[#6D64F7] focus:outline-none hover:-translate-y-0.5 active:translate-y-0.5 transition duration-200 ${
@@ -133,7 +135,7 @@ const CarouselControl = ({
       }`}
       title={title}
       onClick={handleClick}>
-      <IconArrowNarrowRight className="text-neutral-600 dark:text-neutral-200" />
+      <IconArrowNarrowRight className="text-green-600 dark:text-green-200" />
     </button>
   );
 };
