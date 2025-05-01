@@ -55,6 +55,19 @@ app.get("/", (req, res) => {
 });
 
 
+//  to start the server
+app.get("/startServer", async (req, res) => {
+  try {
+    return res.status(200).json({
+      success: true,
+      message: "Server started Successfully",
+    });
+  }
+  catch (error) {
+    console.log(error);
+  }
+})
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
