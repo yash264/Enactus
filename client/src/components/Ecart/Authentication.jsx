@@ -62,7 +62,8 @@ export const Authentication = () => {
                     phoneNo: userDetails.phoneNo
                 }
             }
-        );
+            );
+            window.scrollTo({ top: 0, behavior: "smooth" });
         }
     }, [isAuthenticated, navigate]);
 
