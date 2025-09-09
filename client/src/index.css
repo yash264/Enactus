@@ -3,28 +3,29 @@
 @import 'tailwindcss/utilities';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+html {
+  scroll-behavior: smooth;
+}
+
 footer {
-  /* Ensure there is no margin or padding */
   margin: 0;
   padding: 0;
 }
 
 nav {
-  /* Ensure there is no margin or padding */
   margin: 0;
   padding: 0;
 }
 
+
 /* Media query for mobile screens */
 @media (max-width: 768px) {
   footer {
-    /* Override any specific styles for mobile */
     margin: 0 !important;
     padding: 0 !important;
   }
 
   nav {
-    /* Override any specific styles for mobile */
     margin: 0 !important;
     padding: 0 !important;
   }

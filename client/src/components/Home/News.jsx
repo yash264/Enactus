@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const News = () => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
-  const API_KEY = "01a6212535b44da88726239ec4b81844"; // Replace with your actual API key
-  const API_URL = `https://newsapi.org/v2/everything?q="Enactus India" OR "Enactus USA" OR "NGO" OR "social work"&apiKey=${API_KEY}`;
-
+  axios.defaults.withCredentials = true;
+  
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) {
-          throw new Error("Failed to fetch news");
-        }
-        const data = await response.json();
-        setArticles(data.articles);
+        const response = await axios.get('https://enactusserver.onrender.com/fetchNews');
+
+        setArticles(response.data.message.articles);
         setLoading(false);
-      } catch (err) {
-        setError(err.message);
+
+      }catch(error){
+        console.log(error);
         setLoading(false);
       }
     };
-
     fetchNews();
-  }, []);
+  }, [loading]);
 
   if (loading) return <p className="text-center text-lg text-gray-600">Loading news...</p>;
-  if (error) return <p className="text-center text-red-600">{error}</p>;
 
   return (
     <div className="max-w-7xl mx-auto p-6">

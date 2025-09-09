@@ -5,7 +5,7 @@ import neerImage from '../../assets/projects/images/neer.jpg';
 import moonjImage from '../../assets/projects/images/moonj.jpg';
 import sahyogImage from '../../assets/projects/images/sahyog.jpg';
 
-export function ProjectCarousel() {
+export default function ProjectCarousel() {
   const slideData = [
     {
       title: "Samvesh",
