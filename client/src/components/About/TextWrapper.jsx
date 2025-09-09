@@ -9,7 +9,7 @@ const TextWrapper = () => {
                     Who are We ?
                 </p>
 
-                <p className="mt-3">Enactus <b>Allahabad</b>, established in _____, is an organization, consisting of a group of dedicated and driven students who share the mutual aim of creating a better and more sustainable world and seek to uplift the communities through entrepreneurial action.</p>
+                <p className="mt-3">Enactus <b>MNNIT Allahabad</b>, established in 2016, is an organization, consisting of a group of dedicated and driven students who share the mutual aim of creating a better and more sustainable world and seek to uplift the communities through entrepreneurial action.</p>
 
                 <p className="mt-3">Since its inception, Enactus Allahabad has seeked to bring formidable changes in the society and has worked on the following projects: <b>Neer, Samvesh, Moonj and Sahyog</b>. Our initiatives have the enabled the betterment of thousands of lives and created 182 entrepreneurs through sustainable business models.</p>
 
