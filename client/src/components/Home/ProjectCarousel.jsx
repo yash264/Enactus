@@ -10,71 +10,77 @@ export default function ProjectCarousel() {
   const slideData = [
     {
       title: "Samvesh",
-      button: "Explore Samvesh",
+      button: "Explore Impact →",
       src: samveshImage,
-      description: "Empowering rural artisans through sustainable craft development and market linkages.",
+      description: "Empowering rural artisans through sustainable craft development and market linkages, creating a thriving ecosystem for traditional skills.",
+      impact: "200+",
+      impactLabel: "Artisans Empowered",
+      category: "Rural Empowerment",
+      year: "2023-Present"
     },
     {
       title: "Neer",
-      button: "Explore Neer",
+      button: "Discover Solution →",
       src: neerImage,
-      description: "Innovative water purification solutions for underserved communities.",
+      description: "Revolutionary water purification solutions bringing clean, safe drinking water to underserved communities across rural India.",
+      impact: "5000+",
+      impactLabel: "Lives Improved",
+      category: "Clean Water Initiative",
+      year: "2022-Present"
     },
     {
       title: "Moonj",
-      button: "Explore Moonj",
+      button: "See Innovation →",
       src: moonjImage,
-      description: "Transforming traditional moonj grass into sustainable livelihood opportunities.",
+      description: "Transforming traditional moonj grass into sustainable livelihood opportunities, preserving heritage while creating modern solutions.",
+      impact: "150+",
+      impactLabel: "Families Benefited",
+      category: "Sustainable Livelihoods",
+      year: "2023-Present"
     },
     {
       title: "Sahyog",
-      button: "Explore Sahyog",
+      button: "Learn More →",
       src: sahyogImage,
-      description: "Educational support and skill development for underprivileged youth.",
+      description: "Comprehensive educational support and skill development programs empowering underprivileged youth with future-ready capabilities.",
+      impact: "300+",
+      impactLabel: "Youth Trained",
+      category: "Education & Skills",
+      year: "2022-Present"
     },
   ];
 
   return (
-    <div className="relative overflow-hidden w-full py-16">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-transparent to-purple-50 opacity-30"></div>
-      
-      {/* Floating elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-yellow-300 rounded-full opacity-20 blur-xl animate-pulse"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-pink-300 rounded-full opacity-15 blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-      
+    <div className="relative w-full">
+      {/* Modern Carousel */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10"
+        className="relative z-10 mb-20"
       >
-        <Carousel slides={slideData} />
+        <Carousel data={slideData} />
       </motion.div>
       
-      {/* Project stats */}
+      {/* Call to Action */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="flex justify-center mt-16"
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.5 }}
+        className="text-center mt-16"
       >
-        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-gray-200">
-          <div className="flex space-x-12 text-center">
-            <div>
-              <div className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">4+</div>
-              <div className="text-sm text-gray-600 font-medium">Active Projects</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">500+</div>
-              <div className="text-sm text-gray-600 font-medium">Lives Impacted</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">3</div>
-              <div className="text-sm text-gray-600 font-medium">Years Experience</div>
-            </div>
-          </div>
-        </div>
+        <motion.button
+          whileHover={{ 
+            scale: 1.05,
+            boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
+          }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-lg"
+        >
+          View All Projects
+        </motion.button>
       </motion.div>
     </div>
   );

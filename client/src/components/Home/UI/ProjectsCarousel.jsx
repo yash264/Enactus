@@ -1,323 +1,282 @@
-import { IconArrowRight, IconBolt } from "@tabler/icons-react";
-import { useState, useRef, useId, useEffect, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { IconArrowRight, IconArrowLeft, IconCalendar, IconTag } from "@tabler/icons-react";
 
-const Slide = ({
-  slide,
-  index,
-  current,
-  handleSlideClick
-}) => {
-  const slideRef = useRef(null);
-  const xRef = useRef(0);
-  const yRef = useRef(0);
-  const frameRef = useRef();
+export const Carousel = ({ data = [] }) => {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const prev = () => {
+    setDirection(-1);
+    setCurrent((prevCurrent) =>
+      prevCurrent === 0 ? data.length - 1 : prevCurrent - 1
+    );
+  };
+
+  const next = () => {
+    setDirection(1);
+    setCurrent((prevCurrent) =>
+      prevCurrent === data.length - 1 ? 0 : prevCurrent + 1
+    );
+  };
 
   useEffect(() => {
-    const animate = () => {
-      if (!slideRef.current) return;
+    if (data.length === 0) return;
+    
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prevCurrent) =>
+        prevCurrent === data.length - 1 ? 0 : prevCurrent + 1
+      );
+    }, 6000);
 
-      const x = xRef.current;
-      const y = yRef.current;
+    return () => clearInterval(timer);
+  }, [data.length]);
 
-      slideRef.current.style.setProperty("--x", `${x}px`);
-      slideRef.current.style.setProperty("--y", `${y}px`);
-
-      frameRef.current = requestAnimationFrame(animate);
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
-
-  const handleMouseMove = (event) => {
-    const el = slideRef.current;
-    if (!el) return;
-
-    const r = el.getBoundingClientRect();
-    xRef.current = event.clientX - (r.left + Math.floor(r.width / 2));
-    yRef.current = event.clientY - (r.top + Math.floor(r.height / 2));
-  };
-
-  const handleMouseLeave = () => {
-    xRef.current = 0;
-    yRef.current = 0;
-  };
-
-  const imageLoaded = (event) => {
-    event.currentTarget.style.opacity = "1";
-  };
-
-  const { src, button, title, description } = slide;
-  const navigate = useNavigate();
-
-  const handleNavigation = () => {
-    navigate("/project");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  // Early return if no data - after hooks
+  if (!data || data.length === 0) {
+    return <div className="relative w-full h-[70vh] flex items-center justify-center">
+      <p className="text-gray-500">No data available</p>
+    </div>;
   }
 
-  return (
-    <div className="[perspective:1200px] [transform-style:preserve-3d]">
-      <motion.li
-        ref={slideRef}
-        className="flex flex-1 flex-col items-center justify-center relative text-center text-white opacity-100 transition-all duration-500 ease-in-out w-[70vmin] h-[70vmin] mx-[4vmin] z-10 cursor-pointer"
-        onClick={() => handleSlideClick(index)}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        whileHover={{ y: -10 }}
-        style={{
-          transform:
-            current !== index
-              ? "scale(0.95) rotateX(12deg)"
-              : "scale(1) rotateX(0deg)",
-          transition: "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-          transformOrigin: "bottom",
-        }}
-      >
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-3xl overflow-hidden transition-all duration-300 ease-out shadow-2xl border border-gray-800"
-          style={{
-            transform:
-              current === index
-                ? "translate3d(calc(var(--x) / 25), calc(var(--y) / 25), 0)"
-                : "none",
-          }}
-        >
-          <img
-<<<<<<< HEAD
-            className="absolute inset-0 w-[110%] h-[110%] object-cover transition-all duration-700 ease-in-out"
-=======
-            className="absolute inset-0 w-[100%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
->>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
-            style={{
-              opacity: current === index ? 0.9 : 0.6,
-              transform: current === index ? "scale(1.05)" : "scale(1)",
-            }}
-            alt={title}
-            src={src}
-            onLoad={imageLoaded}
-            loading="eager"
-            decoding="sync"
-          />
-          
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-all duration-700" />
-          
-          {/* Animated elements */}
-          {current === index && (
-            <>
-              <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="absolute top-6 right-6 bg-gradient-to-r from-yellow-500 to-orange-500 p-3 rounded-full shadow-lg"
-              >
-                <IconBolt className="h-5 w-5 text-white" />
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                className="absolute top-6 left-6 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full"
-              >
-                <span className="text-xs font-semibold text-white">Featured Project</span>
-              </motion.div>
-            </>
-          )}
-        </div>
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.9
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1
+    },
+    exit: (direction) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.9
+    })
+  };
 
-        <motion.article
-          className={`relative p-8 transition-all duration-700 ease-in-out ${
-            current === index ? "opacity-100 visible" : "opacity-0 invisible"
-<<<<<<< HEAD
-          }`}
-          initial={{ y: 30, opacity: 0 }}
-          animate={{
-            y: current === index ? 0 : 30,
-            opacity: current === index ? 1 : 0
-          }}
-          transition={{ duration: 0.5 }}
-        >
-          <motion.h2 
-            className="text-2xl md:text-3xl lg:text-5xl font-bold relative mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{
-              y: current === index ? 0 : 20,
-              opacity: current === index ? 1 : 0
-            }}
-            transition={{ delay: 0.1 }}
-          >
-=======
-          }`}>
-          <h2 className="text-lg text-sky-400 md:text-2xl lg:text-4xl font-semibold  relative">
->>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
-            {title}
-          </motion.h2>
-          
-          {description && (
-            <motion.p
-              className="text-gray-300 text-sm md:text-base mb-6 leading-relaxed max-w-md mx-auto"
-              initial={{ y: 20, opacity: 0 }}
-              animate={{
-                y: current === index ? 0 : 20,
-                opacity: current === index ? 1 : 0
-              }}
-              transition={{ delay: 0.2 }}
-            >
-              {description}
-            </motion.p>
-          )}
-          
+  return (
+    <div className="relative w-full h-[70vh] lg:h-[80vh]">
+      {/* Main Carousel Container */}
+      <div className="relative h-full w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
-            className="flex justify-center"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{
-              y: current === index ? 0 : 20,
-              opacity: current === index ? 1 : 0
+            key={current}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{
+              x: { type: "spring", stiffness: 300, damping: 30 },
+              opacity: { duration: 0.5 },
+              scale: { duration: 0.5 }
             }}
-            transition={{ delay: 0.3 }}
+            className="absolute inset-0"
           >
-            <button
-              onClick={handleNavigation}
-<<<<<<< HEAD
-              className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white font-semibold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700"></div>
-              <span className="relative flex items-center space-x-2">
-                <span>{button}</span>
-                <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-=======
-              className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-rose-400 h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
-              {button}
->>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
-            </button>
+            <ProjectSlide {...data[current]} />
           </motion.div>
-        </motion.article>
-      </motion.li>
-    </div>
-  );
-};
+        </AnimatePresence>
 
-const CarouselControl = ({
-  type,
-  title,
-  handleClick
-}) => {
-
-  return (
-    <motion.button
-      className={`w-14 h-14 flex items-center mx-3 justify-center bg-gradient-to-r from-white to-gray-50 hover:from-yellow-500 hover:to-orange-500 border-2 border-gray-200 hover:border-yellow-400 rounded-full focus:outline-none transition-all duration-300 shadow-lg hover:shadow-xl group ${
-        type === "previous" ? "rotate-180" : ""
-      }`}
-      title={title}
-<<<<<<< HEAD
-      onClick={handleClick}
-      whileHover={{ scale: 1.1, y: -2 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <IconArrowRight className="text-gray-700 group-hover:text-white h-6 w-6 transition-colors duration-300" />
-    </motion.button>
-=======
-      onClick={handleClick}>
-      <IconArrowNarrowRight className="text-green-600 dark:text-green-200" />
-    </button>
->>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
-  );
-};
-
-export function Carousel({
-  slides
-}) {
-  const [current, setCurrent] = useState(0);
-
-  const handlePreviousClick = () => {
-    const previous = current - 1;
-    setCurrent(previous < 0 ? slides.length - 1 : previous);
-  };
-
-  const handleNextClick = useCallback(() => {
-    const next = current + 1;
-    setCurrent(next === slides.length ? 0 : next);
-  }, [current, slides.length]);
-
-  const handleSlideClick = (index) => {
-    if (current !== index) {
-      setCurrent(index);
-    }
-  };
-
-  // Auto-advance slides
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNextClick();
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, [current, handleNextClick]);
-
-  const id = useId();
-
-  return (
-    <div
-      className="relative w-[70vmin] h-[70vmin] mx-auto"
-      aria-labelledby={`carousel-heading-${id}`}
-    >
-      <motion.ul
-        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-out"
-        style={{
-          transform: `translateX(-${current * (100 / slides.length)}%)`,
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        {slides.map((slide, index) => (
-          <Slide
-            key={index}
-            slide={slide}
-            index={index}
-            current={current}
-            handleSlideClick={handleSlideClick}
-          />
-        ))}
-      </motion.ul>
-      
-      {/* Enhanced Controls */}
-      <div className="absolute flex justify-center items-center w-full top-[calc(100%+2rem)]">
-        <CarouselControl
-          type="previous"
-          title="Go to previous slide"
-          handleClick={handlePreviousClick}
-        />
+        {/* Navigation Controls */}
+        <div className="absolute inset-x-0 bottom-2 flex justify-center gap-3 z-30">
+          <motion.button
+            onClick={prev}
+            whileHover={{ 
+              scale: 1.1, 
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              boxShadow: "0 8px 32px rgba(255, 255, 255, 0.1)"
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:border-white/40 transition-all duration-300 group"
+          >
+            <IconArrowLeft className="w-5 h-5 text-white group-hover:text-blue-200 transition-colors" />
+          </motion.button>
+          
+          <motion.button
+            onClick={next}
+            whileHover={{ 
+              scale: 1.1, 
+              backgroundColor: "rgba(255, 255, 255, 0.2)",
+              boxShadow: "0 8px 32px rgba(255, 255, 255, 0.1)"
+            }}
+            whileTap={{ scale: 0.9 }}
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 hover:border-white/40 transition-all duration-300 group"
+          >
+            <IconArrowRight className="w-5 h-5 text-white group-hover:text-blue-200 transition-colors" />
+          </motion.button>
+        </div>
 
         {/* Progress Indicators */}
-        <div className="flex space-x-2 mx-6">
-          {slides.map((_, index) => (
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30">
+          {data.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrent(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === current 
-                  ? "bg-gradient-to-r from-yellow-500 to-orange-500 w-8" 
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
-            />
+              onClick={() => {
+                setDirection(index > current ? 1 : -1);
+                setCurrent(index);
+              }}
+              className="relative group"
+            >
+              <div className={`w-10 h-1.5 rounded-full transition-all duration-300 ${
+                index === current
+                  ? "bg-white shadow-lg shadow-white/50"
+                  : "bg-white/30 hover:bg-white/50 group-hover:scale-110"
+              }`} />
+              {index === current && (
+                <motion.div
+                  layoutId="activeIndicator"
+                  className="absolute inset-0 w-10 h-1.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                />
+              )}
+            </button>
           ))}
         </div>
+      </div>
 
-        <CarouselControl
-          type="next"
-          title="Go to next slide"
-          handleClick={handleNextClick}
-        />
+      {/* Thumbnail Navigation */}
+      <div className="hidden lg:flex absolute -bottom-[4.5rem] left-1/2 transform -translate-x-1/2 space-x-3 z-20">
+        {data.map((item, index) => (
+          <motion.button
+            key={index}
+            onClick={() => {
+              setDirection(index > current ? 1 : -1);
+              setCurrent(index);
+            }}
+            whileHover={{ 
+              scale: 1.05,
+              y: -3,
+              boxShadow: "0 8px 20px rgba(0, 0, 0, 0.3)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className={`relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+              index === current 
+                ? "border-white shadow-lg shadow-white/30" 
+                : "border-white/30 hover:border-white/60"
+            }`}
+          >
+            <img 
+              src={item.src} 
+              alt={item.title}
+              className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+            <div className={`absolute inset-0 bg-black transition-opacity duration-300 ${
+              index === current ? "opacity-0" : "opacity-40 hover:opacity-20"
+            }`} />
+            {/* Glow effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300" />
+          </motion.button>
+        ))}
       </div>
     </div>
   );
-}
+};
+
+const ProjectSlide = ({ src, title, description, impact, impactLabel, category, year, button }) => {
+  return (
+    <div className="relative w-full h-full">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <motion.img
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="w-full h-full object-cover"
+          src={src}
+          alt={title}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col justify-center px-8 lg:px-16 max-w-4xl">
+        {/* Category and Year */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center gap-4 mb-6"
+        >
+          <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+            <IconTag className="w-4 h-4 text-blue-300" />
+            <span className="text-blue-200 text-sm font-medium">{category}</span>
+          </span>
+          {year && (
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20">
+              <IconCalendar className="w-4 h-4 text-green-300" />
+              <span className="text-green-200 text-sm font-medium">{year}</span>
+            </span>
+          )}
+        </motion.div>
+
+        {/* Title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-yellow-200 bg-clip-text text-transparent leading-tight"
+        >
+          {title}
+        </motion.h2>
+
+        {/* Description */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-lg lg:text-xl text-blue-100 mb-8 max-w-2xl leading-relaxed"
+        >
+          {description}
+        </motion.p>
+
+        {/* Impact Stats */}
+        {impact && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex items-center gap-6 mb-8"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              className="bg-white/10 backdrop-blur-md rounded-2xl px-6 py-4 border border-white/20 hover:bg-white/20 transition-all duration-300"
+            >
+              <div className="text-3xl font-bold text-white mb-1">{impact}</div>
+              <div className="text-blue-200 text-sm">{impactLabel}</div>
+            </motion.div>
+          </motion.div>
+        )}
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)",
+              y: -2
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg backdrop-blur-sm border border-white/20 group"
+          >
+            <span className="group-hover:translate-x-1 transition-transform duration-300">
+              {button || "Learn More"}
+            </span>
+            <IconArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+          </motion.button>
+        </motion.div>
+      </div>
+    </div>
+  );
+};

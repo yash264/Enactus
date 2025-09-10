@@ -82,12 +82,6 @@ const Project = () => {
     }
   };
 
-  const stats = [
-    { icon: IconTarget, number: "4+", label: "Active Projects" },
-    { icon: IconUsers, number: "500+", label: "Lives Impacted" },
-    { icon: IconTrendingUp, number: "25+", label: "Partners" },
-    { icon: IconHeart, number: "3", label: "Years Impact" }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
@@ -121,9 +115,9 @@ const Project = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             onClick={goBack}
-            className="fixed top-6 left-6 z-50 flex items-center justify-center w-14 h-14 bg-white shadow-lg rounded-full hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-yellow-300 group"
+            className="fixed top-6 left-6 z-50 flex items-center justify-center w-14 h-14 bg-white shadow-lg rounded-full border border-gray-200 group"
           >
-            <IconArrowLeft className="w-6 h-6 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+            <IconArrowLeft className="w-6 h-6 text-gray-600" />
           </motion.button>
         )}
       </AnimatePresence>
@@ -163,29 +157,6 @@ const Project = () => {
                 </p>
               </motion.div>
 
-              {/* Stats Section */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
-              >
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                    className="text-center group"
-                  >
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <stat.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                    <div className="text-gray-600 font-medium">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </motion.div>
 
               {/* Projects Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -198,18 +169,18 @@ const Project = () => {
                     onClick={() => handleClick(key)}
                     className="group cursor-pointer"
                   >
-                    <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-yellow-200">
+                    <div className="relative bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100">
                       {/* Image Container */}
                       <div className="relative h-64 overflow-hidden">
                         <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-20`}></div>
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="w-full h-full object-cover"
                         />
                         
                         {/* Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0"></div>
                         
                         {/* Status Badge */}
                         <div className="absolute top-4 right-4">
@@ -220,15 +191,15 @@ const Project = () => {
                         </div>
 
                         {/* Project Icon */}
-                        <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        <div className="absolute top-4 left-4 opacity-0">
                           <div className={`w-12 h-12 bg-gradient-to-br ${project.gradient} rounded-xl flex items-center justify-center shadow-lg`}>
                             <project.icon className="w-6 h-6 text-white" />
                           </div>
                         </div>
 
                         {/* Hover Button */}
-                        <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
-                          <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+                        <div className="absolute bottom-4 right-4 opacity-0">
+                          <div className="flex items-center justify-center w-12 h-12 bg-white rounded-full shadow-lg">
                             <IconExternalLink className="w-5 h-5 text-gray-700" />
                           </div>
                         </div>
@@ -242,7 +213,7 @@ const Project = () => {
                         </div>
                         
                         {/* Title */}
-                        <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-yellow-600 transition-colors duration-300">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-2">
                           {project.title}
                         </h3>
                         
@@ -264,48 +235,23 @@ const Project = () => {
                           </div>
                           
                           {/* Arrow */}
-                          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center group-hover:bg-yellow-100 transition-colors duration-300">
-                            <IconExternalLink className="w-4 h-4 text-gray-600 group-hover:text-yellow-600 transition-colors duration-300" />
+                          <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                            <IconExternalLink className="w-4 h-4 text-gray-600" />
                           </div>
                         </div>
 
                         {/* Decorative Line */}
-                        <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-gray-200 to-transparent rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-500"></div>
+                        <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-gray-200 to-transparent rounded-full"></div>
                       </div>
 
                       {/* Hover Effect Background */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`}></div>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-0 pointer-events-none`}></div>
                     </div>
                   </motion.div>
                 ))}
               </div>
 
-              {/* Call to Action */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-                className="text-center mt-20"
-              >
-                <div className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 rounded-3xl p-12 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/10"></div>
-                  <div className="relative z-10 text-white">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                      Want to Make an Impact?
-                    </h2>
-                    <p className="text-xl mb-8 opacity-90">
-                      Join us in creating sustainable solutions for a better tomorrow
-                    </p>
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-                    >
-                      Get Involved
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
+
             </div>
           </motion.div>
         ) : (

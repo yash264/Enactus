@@ -76,7 +76,6 @@ const AboutUs = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -195,17 +194,6 @@ const AboutUs = () => {
             </motion.div>
           </div>
         </div>
-=======
-    <div className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20" >
-    
-      <div className="text-center px-4">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-black tracking-tight mb-3">
-          Know About Us !!
-        </h1>
-        <p className="text-xl md:text-base text-zinc-700 italic">
-          A little more about Enactus Allahabad
-        </p>
->>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
       </div>
 
       {/* Stats Section */}
@@ -343,42 +331,6 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Call to Action */}
-      <div className="py-20 bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl mx-auto text-white"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Make an Impact?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Join us in creating sustainable solutions and empowering communities through entrepreneurial action
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Join Our Team
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
-              >
-                Contact Us
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
     </div>
   );
 };
