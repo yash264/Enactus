@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Shreyansh Singh",
+    "yr": "2025",
+    "url": "https://linkedin.com/in/shreyansh",
+    "email": "shreyansh@example.com",
+    "role": "Content Team",
+    "imageSrc": "/MeetOurTeamImages/shreyansh.jpeg"
+  },
+  {
+    "name": "Aditya Roysha",
+    "yr": "2025",
+    "url": "https://linkedin.com/in/aditya",
+    "email": "aditya@example.com",
+    "role": "Field Officer",
+    "imageSrc": "/MeetOurTeamImages/roysha.jpeg"
+  },
+  {
+    "name": "Ananya Singh",
+    "yr": "2025",
+    "url": "https://linkedin.com/in/shreyansh",
+    "email": "ananya@example.com",
+    "role": "Content Team",
+    "imageSrc": "/MeetOurTeamImages/utkarsh.jpeg"
+  }
+]
