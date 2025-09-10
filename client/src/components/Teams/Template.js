@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Imagecard from "./Imagecard";
 
-const Template = ({ name, yr, url, email }) => {
+const Template = ({ members, name, yr, url, email }) => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,6 +24,15 @@ const Template = ({ name, yr, url, email }) => {
     },
   };
 
+  const membersData = members || name?.map((memberName, index) => ({
+    name: memberName,
+    year: yr[index],
+    linkedin: url[index],
+    email: email[index],
+    image: null,
+    position: 'Member'
+  })) || [];
+
   return (
     <motion.div
       variants={containerVariants}
@@ -33,7 +42,7 @@ const Template = ({ name, yr, url, email }) => {
     >
       <div className="container mx-auto px-4">
         <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {name.map((memberName, index) => (
+          {membersData.map((member, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
@@ -41,10 +50,13 @@ const Template = ({ name, yr, url, email }) => {
               className="h-full"
             >
               <Imagecard
-                name={memberName}
-                yr={yr[index]}
-                url={url[index]}
-                email={email[index]}
+                member={member}
+                name={member.name}
+                yr={member.year}
+                url={member.linkedin}
+                email={member.email}
+                image={member.image}
+                position={member.position}
               />
             </motion.div>
           ))}

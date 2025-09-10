@@ -1,163 +1,218 @@
 import React from "react";
-import { FaFacebookF, FaInstagram } from 'react-icons/fa';
-import { CiPhone } from 'react-icons/ci';
-import { SlLocationPin } from 'react-icons/sl';
-import { FaRegEnvelope } from 'react-icons/fa';
-import { FaTwitter } from "react-icons/fa";
-import { BsCalendar2Check } from "react-icons/bs";
+import { motion } from "framer-motion";
+import { 
+  FaFacebookF, 
+  FaInstagram, 
+  FaTwitter, 
+  FaLinkedinIn,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaArrowUp
+} from 'react-icons/fa';
 import enactusLogo from '../../assets/logo/Enactus.png';
-import { BsArrowUpCircleFill } from "react-icons/bs";
 
 function Footer() {
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Smooth scroll effect
+      behavior: "smooth",
     });
   };
 
+  const socialLinks = [
+    {
+      icon: FaFacebookF,
+      href: "https://www.facebook.com/enactusmnnit/",
+      label: "Facebook",
+      color: "hover:text-blue-500"
+    },
+    {
+      icon: FaInstagram,
+      href: "https://www.instagram.com/enactus_mnnit/",
+      label: "Instagram",
+      color: "hover:text-pink-500"
+    },
+    {
+      icon: FaTwitter,
+      href: "https://www.instagram.com/enactus_mnnit/",
+      label: "Twitter",
+      color: "hover:text-blue-400"
+    },
+    {
+      icon: FaEnvelope,
+      href: "mailto:enactusmnnitallahabad@gmail.com",
+      label: "Email",
+      color: "hover:text-yellow-500"
+    }
+  ];
+
+  const quickLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Projects", href: "/project" },
+    { name: "Team", href: "/team" },
+    { name: "E-Cart", href: "/ecart" }
+  ];
+
+  const legalLinks = [
+    { name: "Terms & Conditions", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "MIT License", href: "#" }
+  ];
+
   return (
-      <footer className="relative font-montserrat bg-blueGray-200 mt-[40px] rounded-t-[20px] pt-8 pb-4 bg-black opacity-85 text-white ">
-        <div className="container mx-auto px-4">
-
-          <div className="flex flex-wrap text-left lg:text-left">
-            <div className="w-full lg:w-6/12 px-4">
-
+    <footer className="relative bg-gradient-to-r from-zinc-800 to-zinc-900 text-white mt-20">
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+          
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <div className="mb-6">
               <img
                 src={enactusLogo}
                 alt="Enactus Logo"
-                className="w-36 md:w-44 justify-left"
+                className="w-40 h-auto"
               />
-              <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-                Don't limit your challenges, challenge your limit.
-              </h5>
-
-              <div className="mt-6 lg:mb-0 mb-6">
-                <a href="https://www.facebook.com/enactusmnnit/">
-                  <button
-                    className="bg-white text-black shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                    type="button"
-                  >
-                    <FaFacebookF className="fab fa-facebook-square hover:text-4xl" />
-                  </button>
-                </a>
-
-                <a href="mailto:enactusmnnitallahabad@gmail.com">
-                  <button
-                    className="bg-white text-black shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                    type="button"
-                  >
-                    <FaRegEnvelope className="fab fa-github hover:text-4xl" />
-                  </button>
-                </a>
-
-                <a href="https://www.instagram.com/enactus_mnnit/">
-                  <button
-                    className="bg-white text-black shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                    type="button"
-                  >
-                    <FaInstagram className="fab fa-dribbble hover:text-4xl" />
-                  </button>
-                </a>
-
-                <a href="https://www.instagram.com/enactus_mnnit/">
-                  <button
-                    className="bg-white text-black shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-                    type="button"
-                  >
-                    <FaTwitter className="fab fa-twitter hover:text-4xl" />
-                  </button>
-                </a>
-
-              </div>
             </div>
+            <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+              Don't limit your challenges, challenge your limit.
+            </p>
+            
+            {/* Social Links */}
+            <div className="flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-yellow-500 hover:scale-110 ${social.color} group`}
+                  aria-label={social.label}
+                >
+                  <social.icon className="w-5 h-5 group-hover:text-zinc-900 transition-colors duration-300" />
+                </a>
+              ))}
+            </div>
+          </div>
 
-            <div className="w-full lg:w-6/12 ">
-              <div className="flex flex-wrap items-top mb-6">
-
-                <div className="w-full lg:w-4/12 px-4 ml-auto">
-
-                  <h3 className="text-2xl mb-6 font-bold text-blue-500 hover:text-yellow-500 hover:scale-105 transition-transform">CONTACT US</h3>
-
-                  <ul className="list-styled text-xs ">
-                    <li>
-                      <p class="flex items-center gap-2 justify-left m-2 font-sans hover:font-serif" >
-                        <SlLocationPin className="mt-1 text-xl" />
-                        Motilal Nehru National Institute of Technology
-                        <br />
-                        Teliarganj, Allahabad
-                        <br />
-                        Uttar Pradesh (211004), India
-                      </p>
-                    </li>
-                    <li>
-                      <p class="flex items-center gap-2 justify-left m-2 " >
-                        <CiPhone className="mt-1" />
-                        +91 836 812 8141</p>
-                    </li>
-                    <li>
-                      <p class="flex items-center gap-2 justify-left m-2 " >
-                        <BsCalendar2Check className="mt-1" />
-                        Help & Support</p>
-                    </li>
-                  </ul>
+          {/* Contact Info */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Contact Us
+            </h3>
+            
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <FaMapMarkerAlt className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                <div className="text-gray-300">
+                  <p>Motilal Nehru National Institute of Technology</p>
+                  <p>Teliarganj, Allahabad</p>
+                  <p>Uttar Pradesh (211004), India</p>
                 </div>
-
-                <div className="w-full lg:w-4/12 ">
-                  <ul className="list-styled text-xs p-2 pt-12">
-                    <li>
-                      <p className="m-2 " > Terms & Conditions</p>
-                    </li>
-                    <li>
-                      <p className="m-2"> Privacy Policy</p>
-                    </li>
-                    <li>
-                      <p className="m-2"> MIT License </p>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="w-full lg:w-4/12 ">
-                  <ul className="list-styled text-xs p-2 ">
-                    <li>
-                      <p className="m-2 " > <span style={{ color: "yellow" }} >En</span>trepreneurial - igniting business innovation with integrity and passion.</p>
-                    </li>
-                    <li>
-                      <p className="m-2"> <span style={{ color: "yellow" }} >Act</span>ion - the experience of social impact that sparks social enterprise.</p>
-                    </li>
-                    <li>
-                      <p className="m-2"> <span style={{ color: "yellow" }} >Us</span> - student, academic and business leaders collaborating to create a better world.</p>
-                    </li>
-                  </ul>
-                </div>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <FaPhone className="w-5 h-5 text-yellow-500" />
+                <span className="text-gray-300">+91 836 812 8141</span>
+              </div>
+              
+              <div className="flex items-center space-x-3">
+                <FaEnvelope className="w-5 h-5 text-yellow-500" />
+                <span className="text-gray-300">enactusmnnitallahabad@gmail.com</span>
               </div>
             </div>
           </div>
 
-          <hr />
-
-          <button className="scroll-to-top text-4xl text-red-600 hover:text-blue-400 bg-black-400 fixed"
-            style={{
-              bottom: "20px", /* Distance from the bottom of the viewport */
-              right: "20px", /* Distance from the right of the viewport */
-            }}
-            onClick={scrollToTop} >
-            <BsArrowUpCircleFill />
-          </button>
-
-          <div className="flex flex-wrap items-center bg-black md:justify-between justify-center">
-            <div className="w-full md:w-4/12 mx-auto text-center">
-
-              <div className="text-sm text-blueGray-500 font-semibold py-4">
-                <span > © Enactus MNNIT-Allahabad 2k25 </span>
-              </div>
-
+          {/* Quick Links */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Quick Links
+            </h3>
+            
+            <ul className="space-y-3">
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-yellow-500 transition-all duration-300 hover:translate-x-2 inline-block"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            
+            <div className="mt-8">
+              <h4 className="text-lg font-semibold mb-4 text-gray-200">Legal</h4>
+              <ul className="space-y-2">
+                {legalLinks.map((link, index) => (
+                  <li key={index}>
+                    <a
+                      href={link.href}
+                      className="text-gray-400 text-sm hover:text-yellow-500 transition-colors duration-300"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
+          {/* Enactus Values */}
+          <div className="lg:col-span-1">
+            <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+              Our Values
+            </h3>
+            
+            <div className="space-y-4">
+              <div className="bg-zinc-700/50 rounded-lg p-4 border-l-4 border-yellow-500">
+                <p className="text-gray-300">
+                  <span className="text-yellow-400 font-bold">En</span>trepreneurial - igniting business innovation with integrity and passion.
+                </p>
+              </div>
+              
+              <div className="bg-zinc-700/50 rounded-lg p-4 border-l-4 border-yellow-500">
+                <p className="text-gray-300">
+                  <span className="text-yellow-400 font-bold">Act</span>ion - the experience of social impact that sparks social enterprise.
+                </p>
+              </div>
+              
+              <div className="bg-zinc-700/50 rounded-lg p-4 border-l-4 border-yellow-500">
+                <p className="text-gray-300">
+                  <span className="text-yellow-400 font-bold">Us</span> - student, academic and business leaders collaborating to create a better world.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer >
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-zinc-700">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
+              <p>&copy; 2025 Enactus MNNIT-Allahabad. All rights reserved.</p>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <p className="text-gray-400 text-sm">Made with ❤️ by Enactus MNNIT</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll to Top Button */}
+      <button
+        onClick={scrollToTop}
+        className="fixed bottom-6 right-6 w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 text-zinc-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 group z-50"
+        aria-label="Scroll to top"
+      >
+        <FaArrowUp className="w-5 h-5 mx-auto group-hover:animate-bounce" />
+      </button>
+    </footer>
   );
 }
 
