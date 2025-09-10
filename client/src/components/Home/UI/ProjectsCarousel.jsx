@@ -59,6 +59,7 @@ const Slide = ({
 
   const handleNavigation = () => {
     navigate("/project");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
@@ -89,7 +90,11 @@ const Slide = ({
           }}
         >
           <img
+<<<<<<< HEAD
             className="absolute inset-0 w-[110%] h-[110%] object-cover transition-all duration-700 ease-in-out"
+=======
+            className="absolute inset-0 w-[100%] h-[100%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
+>>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
             style={{
               opacity: current === index ? 0.9 : 0.6,
               transform: current === index ? "scale(1.05)" : "scale(1)",
@@ -130,6 +135,7 @@ const Slide = ({
         <motion.article
           className={`relative p-8 transition-all duration-700 ease-in-out ${
             current === index ? "opacity-100 visible" : "opacity-0 invisible"
+<<<<<<< HEAD
           }`}
           initial={{ y: 30, opacity: 0 }}
           animate={{
@@ -147,6 +153,10 @@ const Slide = ({
             }}
             transition={{ delay: 0.1 }}
           >
+=======
+          }`}>
+          <h2 className="text-lg text-sky-400 md:text-2xl lg:text-4xl font-semibold  relative">
+>>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
             {title}
           </motion.h2>
           
@@ -175,6 +185,7 @@ const Slide = ({
           >
             <button
               onClick={handleNavigation}
+<<<<<<< HEAD
               className="group relative px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white font-semibold rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-orange-500/25 transform hover:scale-105 hover:-translate-y-1 overflow-hidden"
             >
               <div className="absolute inset-0 bg-white/20 transform translate-x-[-100%] skew-x-12 group-hover:translate-x-[100%] transition-transform duration-700"></div>
@@ -182,6 +193,10 @@ const Slide = ({
                 <span>{button}</span>
                 <IconArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </span>
+=======
+              className="mt-6  px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-rose-400 h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+              {button}
+>>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
             </button>
           </motion.div>
         </motion.article>
@@ -195,18 +210,25 @@ const CarouselControl = ({
   title,
   handleClick
 }) => {
+
   return (
     <motion.button
       className={`w-14 h-14 flex items-center mx-3 justify-center bg-gradient-to-r from-white to-gray-50 hover:from-yellow-500 hover:to-orange-500 border-2 border-gray-200 hover:border-yellow-400 rounded-full focus:outline-none transition-all duration-300 shadow-lg hover:shadow-xl group ${
         type === "previous" ? "rotate-180" : ""
       }`}
       title={title}
+<<<<<<< HEAD
       onClick={handleClick}
       whileHover={{ scale: 1.1, y: -2 }}
       whileTap={{ scale: 0.95 }}
     >
       <IconArrowRight className="text-gray-700 group-hover:text-white h-6 w-6 transition-colors duration-300" />
     </motion.button>
+=======
+      onClick={handleClick}>
+      <IconArrowNarrowRight className="text-green-600 dark:text-green-200" />
+    </button>
+>>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
   );
 };
 

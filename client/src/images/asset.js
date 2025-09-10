@@ -22,5 +22,4 @@ export const asset = {
     roysha,
     shreyansh,
     utkarsh
-
 }

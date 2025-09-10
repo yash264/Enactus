@@ -76,6 +76,7 @@ const AboutUs = () => {
   ];
 
   return (
+<<<<<<< HEAD
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -194,6 +195,17 @@ const AboutUs = () => {
             </motion.div>
           </div>
         </div>
+=======
+    <div className="relative min-h-screen bg-background overflow-hidden pt-6 md:pt-16 lg:pt-20" >
+    
+      <div className="text-center px-4">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-black tracking-tight mb-3">
+          Know About Us !!
+        </h1>
+        <p className="text-xl md:text-base text-zinc-700 italic">
+          A little more about Enactus Allahabad
+        </p>
+>>>>>>> 600a2fcca2a64463a78a27213611abc10a14c107
       </div>
 
       {/* Stats Section */}

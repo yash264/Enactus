@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Enactus NIT Allahabad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5a623;
+            color: white;
+        }
+
+        a {
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Invoice Generated</h1>
+
+    <p><strong>Name:</strong> {{details.name}}</p>
+    <p><strong>Email:</strong> {{details.email}}</p>
+    <p><strong>Phone:</strong> {{details.phoneNo}}</p>
+    <p><strong>Address:</strong> {{details.address}}</p>
+    <p><strong>Payment Method:</strong> {{formatMethod details.method}}</p>
+
+    <h3>Products Purchased:</h3>
+    <table border="1" cellpadding="8">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each details.products}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.quantity}}</td>
+                <td>₹{{this.price}}</td>
+                <td>₹{{multiply this.quantity this.price}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+    </table>
+
+    <h3>Total: ₹{{details.total}}</h3>
+
+</body>
+
+</html>

@@ -1,15 +1,15 @@
 import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
-  productId: {
+  name: {
     type: String,
     required: true,
   },
-  amount: {
+  phoneNo: {
     type: Number,
     required: true,
   },
-  productName: {
+  email: {
     type: String,
     required: true,
   },
@@ -17,17 +17,33 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  name: {
-    type: String,
+  products: [
+    {
+      name: {
+        type: String,
+        required: true
+      },
+      quantity: {
+        type: Number,
+        required: true
+      },
+      price: {
+        type: Number,
+        required: true
+      },
+    },
+  ],
+  total: {
+    type: Number,
     required: true,
   },
-  orderId: {
+  method: {
     type: String,
+    enum: ['online', 'cod'],
     required: true,
   },
-  paymentId: {
+  transactionId: {
     type: String,
-    required: true,
   },
   createdAt: {
     type: Date,
@@ -35,6 +51,6 @@ const orderSchema = new mongoose.Schema({
   },
 });
 
-const Order = mongoose.model("Order", orderSchema);
+const Order = mongoose.model("order", orderSchema);
 
 export default Order;

@@ -1,3 +1,12 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+import img1 from "../assets/Home/img1.jpg";
+import img2 from "../assets/Home/img2.jpg";
+import img3 from "../assets/Home/img3.jpg";
+import img4 from "../assets/Home/img4.jpg";
+import img5 from "../assets/Home/img5.jpg";
+
 import ImagesSlider from "../components/Home/ImagesSlider.jsx";
 import LeadershipCards from "../components/Home/LeadershipCards.jsx";
 import AboutEnactus from "../components/Home/AboutEnactus.jsx";
@@ -11,8 +20,7 @@ import { ProjectCarousel } from "../components/Home/ProjectCarousel.jsx";
 import { useNavigate } from "react-router-dom";
 import { asset } from "../images/asset.js";
 
-const images = [img1, img2, img3, img1, img2, img3];
-
+const images = [img1, img2, img3, img4, img5];
 const words = ["innovate", "lead", "impact", "transform"];
 
 // Sample team leaders data
@@ -39,9 +47,12 @@ const teamLeaders = [
 
 const HomePage = () => {
   const navigate = useNavigate();
+
   const handleJoinUs = () => {
     navigate("/about");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
   return (
     <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 text-gray-800 overflow-hidden">
       {/* Enhanced Hero Section */}
@@ -166,6 +177,7 @@ const HomePage = () => {
           <LeadershipCards leaders={teamLeaders} />
         </div>
       </div>
+
     </div>
   );
 };
