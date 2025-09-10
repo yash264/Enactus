@@ -1,0 +1,22 @@
+{
+  "present": [
+    {
+      "name": "Research Lead",
+      "year": "2025",
+      "email": "research@enactus.com",
+      "linkedin": "/",
+      "image": "/src/assets/Teams/TeamMembers/question_mark.jpg",
+      "position": "Team Lead"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "Former Research Member",
+      "year": "2023",
+      "email": "contact@enactus.com",
+      "linkedin": "/",
+      "image": "/src/assets/Teams/TeamMembers/question_mark.jpg",
+      "position": "Alumni"
+    }
+  ]
+}

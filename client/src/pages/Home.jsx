@@ -14,32 +14,10 @@ import AboutEnactus from "../components/Home/AboutEnactus.jsx";
 import DiscoverEnactus from "../components/Home/DiscoverEnactus.jsx";
 import FlipWords from "../components/Home/UI/FlipWords.jsx";
 import ProjectCarousel from "../components/Home/ProjectCarousel.jsx";
-import { asset } from "../images/asset.js";
+import { leadershipData } from "../data/index.js";
 
 const images = [img1, img2, img3, img4, img5];
 const words = ["innovate", "lead", "impact", "transform"];
-
-// Sample team leaders data
-const teamLeaders = [
-  {
-    src: asset.utkarsh,
-    name: "Utkarsh Sharma",
-    designation: "President, Enactus MNNIT",
-    quote: "Leading with vision and passion, we transform ideas into impactful solutions that create lasting change in our communities."
-  },
-  {
-    src: asset.roysha,
-    name: "Aditya Roysha",
-    designation: "Vice President, Enactus MNNIT",
-    quote: "Innovation drives our mission as we coordinate diverse initiatives to empower entrepreneurs and foster sustainable development."
-  },
-  {
-    src: asset.shreyansh,
-    name: "Shreyansh Singh",
-    designation: "Technical Coordinator, Enactus MNNIT",
-    quote: "Bridging technology and social impact, we develop scalable solutions that make meaningful change accessible to all."
-  }
-];
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -171,7 +149,7 @@ const HomePage = () => {
               Meet the dedicated coordinators and team leads driving our vision forward
             </p>
           </div>
-          <LeadershipCards leaders={teamLeaders} />
+          <LeadershipCards leaders={leadershipData} />
         </div>
       </div>
 
