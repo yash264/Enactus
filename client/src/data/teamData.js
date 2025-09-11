@@ -34,11 +34,19 @@ import SanginiBaingaha from '../assets/Teams/TeamMembers/DesignTeam/Sanginibaing
 import DivyanshuPurbey from '../assets/Teams/TeamMembers/DesignTeam/DivyanshuPurbey.jpg';
 import SanyaGupta from '../assets/Teams/TeamMembers/DesignTeam/SANYAGUPTA.jpg';
 import AparajitaSingh from '../assets/Teams/TeamMembers/DesignTeam/AparajitaSingh.jpg';
+import ShreyanshRathi from '../assets/Teams/TeamMembers/DesignTeam/Shreyansh Rathi.png';
+import AyushGupta from '../assets/Teams/TeamMembers/DesignTeam/Ayush Gupta 2.jpg';
+import AryanRaj from '../assets/Teams/TeamMembers/DesignTeam/Aryan_Raj.jpg';
 
 import HumanshiSingh from '../assets/Teams/TeamMembers/MarketingTeam/HumanshiSingh.jpg';
 import ShaghilJawed from '../assets/Teams/TeamMembers/MarketingTeam/ShaghilJawed.jpg';
 import NavyaSrivastava from '../assets/Teams/TeamMembers/MarketingTeam/Navya.jpg';
 import UjjwalGupta from '../assets/Teams/TeamMembers/MarketingTeam/UjjwalGupta.jpg';
+import AashutoshPathak from '../assets/Teams/TeamMembers/MarketingTeam/Aashutosh Pathak.png';
+import PragyanAnsh from '../assets/Teams/TeamMembers/MarketingTeam/pragyan ansh.jpg';
+import PrakharKumarShandilya from '../assets/Teams/TeamMembers/MarketingTeam/Prakhar Kumar Shandilya.jpg';
+import PrabhatShukla from '../assets/Teams/TeamMembers/MarketingTeam/Prabhat Shukla.jpeg';
+
 import ShauryaRajSrivastava from '../assets/Teams/TeamMembers/Shaurya Raj Srivastava.jpg';
 import AniketShah from '../assets/Teams/TeamMembers/Aniket Shah.jpg';
 
@@ -291,36 +299,36 @@ export const teamData = {
     name: "DESIGN TEAM",
     description: "Crafting visual identity and user-centered designs that communicate our mission effectively",
     present: [
+      // {
+      //   name: "Sangini Baingaha",
+      //   year: "2025",
+      //   email: "sanginibaingaha@gmail.com",
+      //   linkedin: "https://www.linkedin.com/in/sangini-baingaha",
+      //   image: SanginiBaingaha,
+      //   position: "Team Lead"
+      // },
       {
-        name: "Sangini Baingaha",
-        year: "2025",
-        email: "sanginibaingaha@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sangini-baingaha",
-        image: SanginiBaingaha,
-        position: "Team Lead"
-      },
-      {
-        name: "Divyanshu Purbey",
-        year: "2026",
-        email: "divyanshupurbey@gmail.com",
-        linkedin: "https://www.linkedin.com/in/divyanshu-purbey",
-        image: DivyanshuPurbey,
+        name: "Ayush Gupta",
+        year: "2027",
+        email: "nitian.ayush.gupta@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ayush-gupta-201a21282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: AyushGupta,
         position: "Designer"
       },
       {
-        name: "Sanya Gupta",
-        year: "2026",
-        email: "sanyagupta@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sanya-gupta",
-        image: SanyaGupta,
+        name: "Shreyansh Rathi ",
+        year: "2027",
+        email: "shreyanshrathi123@gmail.com",
+        linkedin: "https://www.linkedin.com/in/shreyansh-rathi-b2b430291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: ShreyanshRathi,
         position: "Designer"
       },
       {
-        name: "Aparajita Singh",
-        year: "2026",
-        email: "aparajitasingh@gmail.com",
-        linkedin: "https://www.linkedin.com/in/aparajita-singh",
-        image: AparajitaSingh,
+        name: "Aryan Raj ",
+        year: "2027",
+        email: "aryanrj.arya@gmail.com",
+        linkedin: "https://www.linkedin.com/in/aryarj?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: AryanRaj,
         position: "Designer"
       }
     ],
@@ -332,35 +340,35 @@ export const teamData = {
     description: "Building strategic partnerships and promoting our initiatives to expand reach and secure resources",
     present: [
       {
-        name: "Humanshi Singh",
-        year: "2025",
-        email: "humanshisingh@gmail.com",
-        linkedin: "https://www.linkedin.com/in/humanshi-singh",
-        image: HumanshiSingh,
-        position: "Team Lead"
-      },
-      {
-        name: "Shaghil Jawed",
-        year: "2026",
-        email: "shaghiljawed@gmail.com",
-        linkedin: "https://www.linkedin.com/in/shaghil-jawed",
-        image: ShaghilJawed,
+        name: "Aashutosh Prasad Pathak",
+        year: "2027",
+        email: "aashutosh.20232060@mnnit.ac.in",
+        linkedin: "https://www.linkedin.com/in/aashutosh-pathak-7383622a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: AashutoshPathak,
         position: "Marketing Specialist"
       },
       {
-        name: "Navya Srivastava",
-        year: "2026",
-        email: "navyasrivastava@gmail.com",
-        linkedin: "https://www.linkedin.com/in/navya-srivastava",
-        image: NavyaSrivastava,
+        name: "Pragyan Ansh",
+        year: "2027",
+        email: "pragyanansh001@gmail.com",
+        linkedin: "https://www.linkedin.com/in/pragyan-ansh-0b72ab298?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: PragyanAnsh,
         position: "Marketing Specialist"
       },
       {
-        name: "Ujjwal Gupta",
-        year: "2026",
-        email: "ujjwalgupta@gmail.com",
-        linkedin: "https://www.linkedin.com/in/ujjwal-gupta",
-        image: UjjwalGupta,
+        name: "Prakhar Kumar Shandilya ",
+        year: "2027",
+        email: "prakhar4472@gmail.com",
+        linkedin: "https://www.linkedin.com/in/prakhar-ks/",
+        image: PrakharKumarShandilya,
+        position: "Marketing Specialist"
+      },
+      {
+        name: "Prabhat Shukla ",
+        year: "2027",
+        email: "prabhatshukladva@gmail.com",
+        linkedin: "https://www.linkedin.com/in/prabhat-shukla-771968302?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: PrabhatShukla,
         position: "Marketing Specialist"
       }
     ],
