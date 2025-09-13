@@ -8,6 +8,7 @@ const Web = () => {
       teamData={webTeamData}
       teamName="WEB TEAM"
       teamDescription="Meet the architects of our digital journey"
+       classname="m-0 p-0"
     />
   );
 };
