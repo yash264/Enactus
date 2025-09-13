@@ -1,10 +1,9 @@
 // All team data in a single JavaScript file
 // Import all team member images
-import UtkarshSharma from '../assets/Teams/TeamMembers/WebTeam/Utkarsh.jpg';
-import MeenakshiGupta from '../assets/Teams/TeamMembers/WebTeam/MeenakshiGupta.png';
-import ShivangiVerma from '../assets/Teams/TeamMembers/WebTeam/ShivangiVerma.jpg';
-import VanshanshPrajav from '../assets/Teams/TeamMembers/WebTeam/VanshanshPrajav.jpg';
-import SnehaHaldiya from '../assets/Teams/TeamMembers/WebTeam/snehahaldiya.jpeg';
+import AtulPathak from '../assets/Teams/TeamMembers/WebTeam/Atul_Pathak.jpg';
+import AyushTiwari from '../assets/Teams/TeamMembers/WebTeam/Ayush_Tiwari.jpg';
+import HrideshMehrotra from '../assets/Teams/TeamMembers/WebTeam/Hridesh_Mehrotra.jpg';
+import ManpreetKaur from '../assets/Teams/TeamMembers/WebTeam/Manpreet_Kaur.jpeg';
 import GawthamVellore from '../assets/Teams/TeamMembers/GawthamVellore.jpg';
 import AdyaSharma from '../assets/Teams/TeamMembers/AdyaSharma.jpg';
 import HimanshuTripathi from '../assets/Teams/TeamMembers/Himanshu Tripathi.jpeg';
@@ -16,11 +15,11 @@ import ShreshthGadhwala from '../assets/Teams/TeamMembers/ContentTeam/Shresth.jp
 import RoshanKumar from '../assets/Teams/TeamMembers/ContentTeam/RoshanKumar.jpg';
 import AyushAman from '../assets/Teams/TeamMembers/Ayush Aman.jpeg';
 
-import NishanRajRegmi from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/NishanRajRegmi.jpeg';
-import AjeetKumar from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/AjeetKumar.jpg';
-import YashvardhanSingh from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/YashvardhanSingh.jpeg';
-import AkshatMahanth from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/AkshatMahanth.jpg';
-import ShreyanDas from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/SHREYANDAS.jpeg';
+import AbhishekKumar from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Abhishek_Kumar.jpg';
+import KinjalDixit from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/kinjal_dixit.JPG';
+import TavishiSharma from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Tavishi_Sharma.jpg';
+import YashKeswani from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Yash_Keswani.jpg';
+import AbhinayKumar from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Abhinay_Kumar.jpg';
 
 import JatinChaudhary from '../assets/Teams/TeamMembers/FieldOfficer/jatinChaudhary.jpeg';
 import IqraAbbasi from '../assets/Teams/TeamMembers/FieldOfficer/iqraabbasi.jpg';
@@ -50,45 +49,38 @@ export const teamData = {
     description: "Building digital solutions and innovative web platforms to amplify our social impact initiatives",
     present: [
       {
-        name: "Utkarsh Sharma",
-        year: "2025",
-        email: "utkarshsharma34524812@gmail.com",
-        linkedin: "https://www.linkedin.com/in/utkarshsharma3651",
-        image: UtkarshSharma,
-        position: "Team Lead"
-      },
-      {
-        name: "Meenakshi Gupta",
-        year: "2026",
-        email: "guptameenakshi957@gmail.com",
-        linkedin: "https://www.linkedin.com/in/meenakshi-gupta109",
-        image: MeenakshiGupta,
+        name: "Atul Pathak",
+        year: "2027",
+        email: "atul3pathak@gmail.com",
+        linkedin: "https://www.linkedin.com/in/atul-pathak03/",
+        image: AtulPathak,
         position: "Developer"
       },
       {
-        name: "Shivangi Verma",
-        year: "2026",
-        email: "shivangiv1212@gmail.com",
-        linkedin: "https://www.linkedin.com/in/shivangi-verma-288366282",
-        image: ShivangiVerma,
+        name: "Ayush Tiwari",
+        year: "2027",
+        email: "ayusht9919@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ayush-tiwari-84a823281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: AyushTiwari,
         position: "Developer"
       },
       {
-        name: "Vanshansh Prajav",
-        year: "2026",
-        email: "vanshansh.prajav@gmail.com",
-        linkedin: "https://www.linkedin.com/in/vanshansh-prajav/",
-        image: VanshanshPrajav,
+        name: "Manpreet Kaur",
+        year: "2027",
+        email: "preetkaurpawar8@gmail.com",
+        linkedin: "https://www.linkedin.com/in/manpreet-kaur-a0a345288/",
+        image: ManpreetKaur,
         position: "Developer"
       },
       {
-        name: "Sneha Haldiya",
-        year: "2026",
-        email: "haldiyasneha29@gmail.com",
-        linkedin: "https://in.linkedin.com/in/sneha-haldiya",
-        image: SnehaHaldiya,
+        name: "Hridesh Mehrotra",
+        year: "2027",
+        email: "hridesh.mehrotra@gmail.com",
+        linkedin: "https://www.linkedin.com/in/hrideshmehrotra",
+        image: HrideshMehrotra,
         position: "Developer"
       }
+
     ],
     alumni: [
       {
@@ -180,45 +172,46 @@ export const teamData = {
     description: "Conducting in-depth research and developing sustainable solutions for complex social challenges",
     present: [
       {
-        name: "Nishan Raj Regmi",
-        year: "2025",
-        email: "nishanraj@gmail.com",
-        linkedin: "https://www.linkedin.com/in/nishan-raj-regmi",
-        image: NishanRajRegmi,
-        position: "Team Lead"
-      },
-      {
-        name: "Ajeet Kumar",
-        year: "2026",
-        email: "ajeetkumar@gmail.com",
-        linkedin: "https://www.linkedin.com/in/ajeet-kumar",
-        image: AjeetKumar,
+        name: "Abhishek Kumar",
+        year: "2027",
+        email: "akabhishek2311@gmail.con",
+        linkedin: "https://www.linkedin.com/in/abhishek231104",
+        image: AbhishekKumar,
         position: "Researcher"
       },
       {
-        name: "Yashvardhan Singh",
-        year: "2026",
-        email: "yashvardhan@gmail.com",
-        linkedin: "https://www.linkedin.com/in/yashvardhan-singh",
-        image: YashvardhanSingh,
+        name: "Kinjal Dixit",
+        year: "2027",
+        email: "kinjald1207@gmail.com",
+        linkedin: "https://www.linkedin.com/in/kinjal-dixit-572797201?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        image: KinjalDixit,
         position: "Researcher"
       },
       {
-        name: "Akshat Mahanth",
-        year: "2026",
-        email: "akshatmahanth@gmail.com",
-        linkedin: "https://www.linkedin.com/in/akshat-mahanth",
-        image: AkshatMahanth,
+        name: "Tavishi Sharma",
+        year: "2027",
+        email: "tavishi.9905@gmail.com",
+        linkedin: "https://www.linkedin.com/in/tavishi-sharma-3615a4239?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: TavishiSharma,
         position: "Researcher"
       },
       {
-        name: "Shreyan Das",
-        year: "2026",
-        email: "shreyandas@gmail.com",
-        linkedin: "https://www.linkedin.com/in/shreyan-das",
-        image: ShreyanDas,
+        name: "Yash Keswani",
+        year: "2027",
+        email: "ykeswani29@gmail.com",
+        linkedin: "https://www.linkedin.com/in/yash-keswani-856b45293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: YashKeswani,
+        position: "Researcher"
+      },
+      {
+        name: "Abhinay Kumar",
+        year: "2027",
+        email: "akumar953667@gmail.com",
+        linkedin: "https://www.linkedin.com/in/abhinay-kumar-520369289",
+        image: AbhinayKumar,
         position: "Researcher"
       }
+
     ],
     alumni: []
   },

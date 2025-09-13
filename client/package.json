@@ -5,7 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@sanity/client": "^6.12.3",
-    "@tabler/icons-react": "^3.28.1",
+    "@tabler/icons-react": "^3.34.1",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
