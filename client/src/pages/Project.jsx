@@ -12,6 +12,8 @@ import {
   IconHandRock
 } from '@tabler/icons-react';
 import Webpage from '../components/Projects/Webpage';
+import SEO from '../components/General/SEO.jsx';
+import { seoConfig } from '../data/seoConfig.js';
 
 import samveshImage from '../assets/projects/images/samvesh.jpg';
 import neerImage from '../assets/projects/images/neer.jpg';
@@ -85,6 +87,14 @@ const Project = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      <SEO 
+        title={seoConfig.projects.title}
+        description={seoConfig.projects.description}
+        keywords={seoConfig.projects.keywords}
+        url={seoConfig.projects.url}
+        image={seoConfig.projects.image}
+      />
+      
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div

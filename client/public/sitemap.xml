@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!-- Main Pages -->
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/about</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/project</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/team</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/ecart</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Team Pages -->
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/webTeam</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/reserchAndDevelopment</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/contentDepartment</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/fieldOfficer</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/designDepartment</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/marketingAndSponcership</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+
+<!-- Product Pages -->
+<url>
+  <loc>https://enactus-mnnit2k25.netlify.app/buyProduct</loc>
+  <lastmod>2025-09-14</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+
+</urlset>

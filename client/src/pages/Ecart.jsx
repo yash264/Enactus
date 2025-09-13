@@ -3,8 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import CartDrawer from "../components/Ecart/CartDrawer";
 import SearchBar from "../components/Ecart/SearchBar";
 import ProductList from "../components/Ecart/ProductList";
+import SEO from "../components/General/SEO.jsx";
 import { ShoppingCart } from "lucide-react";
 import { products } from "../components/Ecart/Products";
+import { seoConfig } from "../data/seoConfig.js";
 import { ToastContainer } from 'react-toastify';
 
 const ECart = () => {
@@ -76,6 +78,14 @@ const ECart = () => {
 
   return (
     <div className="relative min-h-screen bg-background pt-6 md:pt-16 lg:pt-20">
+      <SEO 
+        title={seoConfig.ecart.title}
+        description={seoConfig.ecart.description}
+        keywords={seoConfig.ecart.keywords}
+        url={seoConfig.ecart.url}
+        image={seoConfig.ecart.image}
+      />
+      
       <div className="container mx-auto mb-8 max-w-4xl relative">
         <div className="text-center px-4">
 

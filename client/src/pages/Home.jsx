@@ -14,7 +14,9 @@ import AboutEnactus from "../components/Home/AboutEnactus.jsx";
 import DiscoverEnactus from "../components/Home/DiscoverEnactus.jsx";
 import FlipWords from "../components/Home/UI/FlipWords.jsx";
 import ProjectCarousel from "../components/Home/ProjectCarousel.jsx";
+import SEO from "../components/General/SEO.jsx";
 import { leadershipData } from "../data/index.js";
+import { seoConfig } from "../data/seoConfig.js";
 
 const images = [img1, img2, img3, img4, img5];
 const words = ["innovate", "lead", "impact", "transform"];
@@ -29,6 +31,14 @@ const HomePage = () => {
 
   return (
     <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 text-gray-800 overflow-hidden">
+      <SEO 
+        title={seoConfig.home.title}
+        description={seoConfig.home.description}
+        keywords={seoConfig.home.keywords}
+        url={seoConfig.home.url}
+        image={seoConfig.home.image}
+      />
+      
       {/* Enhanced Hero Section */}
       <div className="relative">
         <ImagesSlider images={images} autoplay={true} direction="up" className="h-[100vh] w-full">
