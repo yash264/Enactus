@@ -6,7 +6,7 @@ const research = () => {
   return (
     <TeamPageTemplate 
       teamData={researchTeamData}
-      teamName="Research "
+      teamName="RESEARCH AND DEVELOPMENT"
       teamDescription="Building partnerships and community outreach"
     />
   );

@@ -8,6 +8,8 @@ import GawthamVellore from '../assets/Teams/TeamMembers/GawthamVellore.jpg';
 import AdyaSharma from '../assets/Teams/TeamMembers/AdyaSharma.jpg';
 import HimanshuTripathi from '../assets/Teams/TeamMembers/Himanshu Tripathi.jpeg';
 import ShrutiMayank from '../assets/Teams/TeamMembers/Shruti Mayank.JPG';
+import MeenakshiGupta from '../assets/Teams/TeamMembers/WebTeam/MeenakshiGupta.jpeg'
+import DHruvMaheshwari from '../assets/Teams/TeamMembers/Dhruv_maheshwari.jpg'
 
 import ShreyanshSingh from '../assets/Teams/TeamMembers/ContentTeam/ShreyanshSingh.jpg';
 import RahulKharwar from '../assets/Teams/TeamMembers/ContentTeam/RahulKharwar.jpg';
@@ -20,6 +22,12 @@ import KinjalDixit from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/kin
 import TavishiSharma from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Tavishi_Sharma.jpg';
 import YashKeswani from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Yash_Keswani.jpg';
 import AbhinayKumar from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Abhinay_Kumar.jpg';
+import Mohammadyusuf from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/MohammadYusuf.jpeg'
+import AkshatMahanth from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Akshat_Mahanth_treasurer.jpg'
+import YashvardhanSingh from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/YashvardhanSingh.jpeg'
+import DevMani from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/DevMani.jpeg'
+import UtsavPandey from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/UtsavPandey.jpeg'
+
 
 import JatinChaudhary from '../assets/Teams/TeamMembers/FieldOfficer/jatinChaudhary.jpeg';
 import IqraAbbasi from '../assets/Teams/TeamMembers/FieldOfficer/iqraabbasi.jpg';
@@ -56,6 +64,22 @@ export const teamData = {
     name: "WEB TEAM",
     description: "Building digital solutions and innovative web platforms to amplify our social impact initiatives",
     present: [
+      {
+        name: "Meenakshi Gupta",
+        year: "2026",
+        email: "guptameenakshi957@gmail.com",
+        linkedin: "https://www.linkedin.com/in/meenakshi-gupta109",
+        image: MeenakshiGupta,
+        position: "Web Team Head"
+      },
+      {
+        name: "Dhruv Maheshwari",
+        year: "2026",
+        email: "dhruvmaheshwari9411@gmail.com",
+        linkedin: "https://www.linkedin.com/in/dhruv-maheshwari-12ba7224b",
+        image: DHruvMaheshwari,
+        position: "Developer"
+      },
       {
         name: "Atul Pathak",
         year: "2027",
@@ -179,6 +203,46 @@ export const teamData = {
     name: "RESEARCH AND DEVELOPMENT",
     description: "Conducting in-depth research and developing sustainable solutions for complex social challenges",
     present: [
+       {
+        name: "Mohammad Yusuf",
+        year: "2026",
+        email: "m.yusuf7423@gmail.com",
+        linkedin: "http://www.linkedin.com/in/mohammad-yusuf-b72342253",
+        image: Mohammadyusuf,
+        position: "Reasearch and Devlopment Team Head"
+      },
+      {
+        name: "Akshat Mahanth",
+        year: "2026",
+        email: "akshatmahantham@gmail.com",
+        linkedin: "https://www.linkedin.com/in/akshat-mahanth-b1262924b",
+        image: AkshatMahanth,
+        position: "Reasearcher"
+      },
+       {
+        name: "Dev Mani Tripathi",
+        year: "2026",
+        email: "devmanitripathi10@gmail.com",
+        linkedin: "https://www.linkedin.com/in/dev-mani-tripathi-70221227b",
+        image: DevMani,
+        position: "Reasearcher"
+      },
+      {
+        name: "Yashvardhan singh",
+        year: "2026",
+        email: "yvardhan0711@gmail.com",
+        linkedin: "https://www.linkedin.com/in/yashvardhan-singh-82ab03288",
+        image: YashvardhanSingh,
+        position: "Reasearcher"
+      },
+      {
+        name: "Utsav Pandey",
+        year: "2026",
+        email: "Utsavpandey004@gnail.com",
+        linkedin: "https://www.linkedin.com/in/utsav-pandey-8206a71b1/",
+        image: UtsavPandey,
+        position: "Reasearcher"
+      },
       {
         name: "Abhishek Kumar",
         year: "2027",
@@ -292,14 +356,54 @@ export const teamData = {
     name: "DESIGN TEAM",
     description: "Crafting visual identity and user-centered designs that communicate our mission effectively",
     present: [
+      {
+        name: "Sangini Baingaha",
+        year: "2026",
+        email: "sanginibaingaha@gmail.com",
+        linkedin: "https://www.linkedin.com/in/sangini-baingaha",
+        image: SanginiBaingaha,
+        position: "Design Team Head"
+      },
+      {
+        name: "Divyanshu Purbey",
+        year: "2026",
+        email: "divyanshu.20222064@mnnit.ac.in",
+        linkedin: "https://www.linkedin.com/in/divyanshu-purbey/",
+        image: DivyanshuPurbey,
+        position: "Designer"
+      },
       // {
-      //   name: "Sangini Baingaha",
-      //   year: "2025",
-      //   email: "sanginibaingaha@gmail.com",
-      //   linkedin: "https://www.linkedin.com/in/sangini-baingaha",
-      //   image: SanginiBaingaha,
-      //   position: "Team Lead"
+      //   name: "Gagan Kumar ",
+      //   year: "2026",
+      //   email: "gagan16903@gmail.com",
+      //   linkedin: "https://www.linkedin.com/in/gagan-kumar-128007259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      //   image:,
+      //   position: "Designer"
       // },
+      // {
+      //   name: "Palakshi singh",
+      //   year: "2026",
+      //   email: "singhpalakshi157@gmail.com",
+      //   linkedin: "https://www.linkedin.com/in/ayush-gupta-201a21282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      //   image: ,
+      //   position: "Designer"
+      // },
+      {
+        name: "Rahul kharwar",
+        year: "2026",
+        email: "rahulkharwar250704@gmail.com",
+        linkedin: "https://www.linkedin.com/in/rahul-kharwar-87775526a/",
+        image: RahulKharwar,
+        position: "Designer"
+      },
+      {
+        name: "Shresth Gadhwala",
+        year: "2026",
+        email: "shresthgadhwala.p@gmail.com",
+        linkedin: "https://www.linkedin.com/in/shresth2301/",
+        image: ShreshthGadhwala,
+        position: "Designer"
+      },
       {
         name: "Ayush Gupta",
         year: "2027",
@@ -332,6 +436,30 @@ export const teamData = {
     name: "MARKETING AND SPONSORSHIP",
     description: "Building strategic partnerships and promoting our initiatives to expand reach and secure resources",
     present: [
+        {
+        name: "Ujjwal Gupta",
+        year: "2026",
+        email: "guptaujjwal2509@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ujjwal-gupta25?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image:UjjwalGupta,
+        position: "Marketing and Sponsorship Head"
+      },
+      {
+        name: "Shaghil Jawed ",
+        year: "2026",
+        email: "shaghiljawed76@gmail.com",
+        linkedin: "https://www.linkedin.com/in/shaghil-jawed-68989919b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: ShaghilJawed,
+        position: "Marketing Specialist"
+      },
+      {
+        name: "Humanshi Singh",
+        year: "2026",
+        email: "Humanshi Singh",
+        linkedin: "https://www.linkedin.com/in/humanshi-singh03/",
+        image: HumanshiSingh,
+        position: "Marketing Specialist"
+      },
       {
         name: "Aashutosh Prasad Pathak",
         year: "2027",
