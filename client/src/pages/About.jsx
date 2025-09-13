@@ -133,11 +133,13 @@ const AboutUs = () => {
                 Makers
               </h1>
               
-              <p className="text-xl text-gray-600 leading-relaxed">
-                We are a passionate community of students, innovators, and change-makers at MNNIT Allahabad, 
-                dedicated to creating sustainable solutions for social, environmental, and economic challenges 
-                through entrepreneurial action.
-              </p>
+               <div className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">Enactus <b>MNNIT Allahabad</b>, established in 2016, is an organization, consisting of a group of dedicated and driven students who share the mutual aim of creating a better and more sustainable world and seek to uplift the communities through entrepreneurial action.</p>
+                <p className="text-xl text-gray-600 leading-relaxed">Since its inception, Enactus MNNIT Allahabad has seeked to bring formidable changes in the society and has worked on the following projects: <b>Neer</b>, <b>Samvesh</b>, <b>Moonj</b> and <b>Sahyog</b>. Our initiatives have the enabled the betterment of thousands of lives and created <b>182 entrepreneurs</b> through sustainable business models.</p>
+                <p className="text-xl text-gray-600 leading-relaxed">Change isn't just a mindset, it is a culmination of our efforts & actions and we, at Enactus MNNIT Allahabad, stand firm with this belief. Because, we choose to be the changemakers!</p>
+                <blockquote className="italic text-xl text-gray-700 font-semibold border-l-4 border-yellow-500 pl-4">"For the community, by the community."</blockquote>
+              </div>
+
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <motion.button
