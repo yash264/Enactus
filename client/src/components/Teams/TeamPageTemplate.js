@@ -32,10 +32,10 @@ const TeamPageTemplate = ({ teamData, teamName, teamDescription }) => {
     >
       <Department tag={teamName} des={teamDescription} />
       
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-5">
         {/* Toggle Section */}
         <motion.div 
-          className="flex justify-center mb-16"
+          className="flex justify-center mb-5"
           variants={containerVariants}
         >
           <div className="bg-white p-2 rounded-2xl shadow-lg inline-flex gap-2">
