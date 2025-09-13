@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import axios from 'axios';
 
 import Home from './pages/Home';
@@ -39,7 +40,7 @@ function App() {
   }, [])
 
   return (
-    <>
+    <HelmetProvider>
       <Navbar />
       <div className="pt-10">
         <Routes>
@@ -62,7 +63,7 @@ function App() {
       <section id="contactUs">
         <Footer />
       </section>
-    </>
+    </HelmetProvider>
   );
 }
 

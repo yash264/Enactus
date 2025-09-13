@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { Code, Pencil, Users, Megaphone, Search, Target, ArrowRight, MapPin } from 'lucide-react';
+import SEO from '../components/General/SEO.jsx';
+import { seoConfig } from '../data/seoConfig.js';
 import Reserach from '../assets/Teams/research.webp'
 import Design from '../assets/Teams/DESIGN.jpg'
 import Sponsorship from '../assets/Teams/SPONSORSHIP.jpg'
@@ -158,6 +160,14 @@ const Selection = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden">
+      <SEO 
+        title={seoConfig.teams.title}
+        description={seoConfig.teams.description}
+        keywords={seoConfig.teams.keywords}
+        url={seoConfig.teams.url}
+        image={seoConfig.teams.image}
+      />
+      
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,_rgba(14,165,233,0.05)_0%,_transparent_50%)]" />

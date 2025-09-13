@@ -12,6 +12,8 @@ import {
   IconLeaf,
   IconShield
 } from '@tabler/icons-react';
+import SEO from '../components/General/SEO.jsx';
+import { seoConfig } from '../data/seoConfig.js';
 
 const AboutUs = () => {
   const values = [
@@ -77,6 +79,14 @@ const AboutUs = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+      <SEO 
+        title={seoConfig.about.title}
+        description={seoConfig.about.description}
+        keywords={seoConfig.about.keywords}
+        url={seoConfig.about.url}
+        image={seoConfig.about.image}
+      />
+      
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
