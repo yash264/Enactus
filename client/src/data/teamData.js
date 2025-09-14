@@ -11,11 +11,12 @@ import ShrutiMayank from '../assets/Teams/TeamMembers/Shruti Mayank.JPG';
 import MeenakshiGupta from '../assets/Teams/TeamMembers/WebTeam/MeenakshiGupta.jpeg'
 import DHruvMaheshwari from '../assets/Teams/TeamMembers/Dhruv_maheshwari.jpg'
 
-import ShreyanshSingh from '../assets/Teams/TeamMembers/ContentTeam/ShreyanshSingh.jpg';
-import RahulKharwar from '../assets/Teams/TeamMembers/ContentTeam/RahulKharwar.jpg';
-import ShreshthGadhwala from '../assets/Teams/TeamMembers/ContentTeam/Shresth.jpg';
-import RoshanKumar from '../assets/Teams/TeamMembers/ContentTeam/RoshanKumar.jpg';
-import AyushAman from '../assets/Teams/TeamMembers/Ayush Aman.jpeg';
+import Shreyansh from '../assets/Teams/TeamMembers/ContentTeam/Shreyansh.jpg';
+import Ayush from '../assets/Teams/TeamMembers/ContentTeam/Ayush.jpg';
+import Aryan from '../assets/Teams/TeamMembers/ContentTeam/Aryan.jpg';
+import Shiv from '../assets/Teams/TeamMembers/ContentTeam/Shiv.jpg';
+import Mridul from '../assets/Teams/TeamMembers/ContentTeam/Mridul.jpg';
+import Aman from '../assets/Teams/TeamMembers/ContentTeam/Aman.jpeg';
 
 import AbhishekKumar from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/Abhishek_Kumar.jpg';
 import KinjalDixit from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/kinjal_dixit.JPG';
@@ -29,13 +30,13 @@ import DevMani from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/DevMani
 import UtsavPandey from '../assets/Teams/TeamMembers/ResearchDevelopmentTeam/UtsavPandey.jpeg'
 
 
-import JatinChaudhary from '../assets/Teams/TeamMembers/FieldOfficer/jatinChaudhary.jpeg';
-import IqraAbbasi from '../assets/Teams/TeamMembers/FieldOfficer/iqraabbasi.jpg';
-import SattwikJana from '../assets/Teams/TeamMembers/FieldOfficer/SattwikJana.jpeg';
-import AnantPandey from '../assets/Teams/TeamMembers/FieldOfficer/AnantPandey.jpeg';
-import DivyaMohanKalhans from '../assets/Teams/TeamMembers/FieldOfficer/DivyaMohanKalhans.jpg';
-import MitaliSrivastava from '../assets/Teams/TeamMembers/FieldOfficer/MITALISRIVASTAVA.jpeg';
-import AdityaRoysha from '../assets/Teams/TeamMembers/FieldOfficer/Aditya.jpeg';
+import alok from '../assets/Teams/TeamMembers/FieldOfficer/alok.JPG';
+import Dhruv from '../assets/Teams/TeamMembers/FieldOfficer/Dhruv.jpg';
+import Ashutosh from '../assets/Teams/TeamMembers/FieldOfficer/Ashutosh.jpeg';
+import vivek from '../assets/Teams/TeamMembers/FieldOfficer/vivek.jpeg';
+import prajjwal from '../assets/Teams/TeamMembers/FieldOfficer/Prajjwal.jpg';
+ import neelakshi from '../assets/Teams/TeamMembers/FieldOfficer/neelakshi.jpeg';
+// import AdityaRoysha from '../assets/Teams/TeamMembers/FieldOfficer/Aditya.jpeg';
 
 import SanginiBaingaha from '../assets/Teams/TeamMembers/DesignTeam/Sanginibaingaha .jpeg';
 import DivyanshuPurbey from '../assets/Teams/TeamMembers/DesignTeam/DivyanshuPurbey.jpg';
@@ -157,35 +158,43 @@ export const teamData = {
     description: "Creating compelling content and strategic communications to tell our story and inspire change",
     present: [
       {
-        name: "Shreyansh Singh",
-        year: "2025",
-        email: "shreyanshsingh@gmail.com",
-        linkedin: "https://www.linkedin.com/in/shreyansh-singh",
-        image: ShreyanshSingh,
-        position: "Team Lead"
-      },
-      {
-        name: "Rahul Kharwar",
-        year: "2026",
-        email: "rahulkharwar@gmail.com",
-        linkedin: "https://www.linkedin.com/in/rahul-kharwar",
-        image: RahulKharwar,
+        name: "Shreyansh Rathi ",
+        year: "2027",
+        email: "shreyanshrathi123@gmail.com",
+        linkedin: "https://www.linkedin.com/in/shreyansh-rathi-b2b430291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: Shreyansh,
         position: "Content Writer"
       },
       {
-        name: "Shresthaa Gadhwala",
-        year: "2026",
-        email: "shresth@gmail.com",
-        linkedin: "https://www.linkedin.com/in/shresth-gadhwala",
-        image: ShreshthGadhwala,
+        name: "Mridul Prakash Verma ",
+        year: "2027",
+        email: "mridulprakashverma@gmail.com",
+        linkedin: "https://www.linkedin.com/in/mridulmnnit?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: Mridul,
         position: "Content Writer"
       },
       {
-        name: "Roshan Kumar",
-        year: "2026",
-        email: "roshankumar@gmail.com",
-        linkedin: "https://www.linkedin.com/in/roshan-kumar",
-        image: RoshanKumar,
+        name: "Aryan Raj ",
+        year: "2027",
+        email: "aryanrj.arya@gmail.com",
+        linkedin: "https://www.linkedin.com/in/aryarj?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: Aryan,
+        position: "Content Writer"
+      },
+      {
+        name: "Ayush Gupta  ",
+        year: "2027",
+        email: "nitian.ayush.gupta@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ayush-gupta-201a21282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: Ayush,
+        position: "Content Writer"
+      },
+      {
+        name: "Shiv Sharan Shukla",
+        year: "2027",
+        email: "nitian.ayush.gupta@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ayush-gupta-201a21282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: Shiv,
         position: "Content Writer"
       }
     ],
@@ -195,7 +204,7 @@ export const teamData = {
         year: "2022",
         email: "contact@enactus.com",
         linkedin: "https://www.linkedin.com/in/ayush-aman",
-        image: AyushAman,
+        image: Aman,
         position: "Alumni"
       }
     ]
@@ -294,62 +303,48 @@ export const teamData = {
     name: "FIELD OFFICER",
     description: "Implementing projects on ground level and directly engaging with communities to create lasting impact",
     present: [
+      
       {
-        name: "Jatin Chaudhary",
-        year: "2025",
-        email: "jatinchaudhary@gmail.com",
-        linkedin: "https://www.linkedin.com/in/jatin-chaudhary",
-        image: JatinChaudhary,
-        position: "Team Lead"
-      },
-      {
-        name: "Iqra Abbasi",
-        year: "2026",
-        email: "iqraabbasi@gmail.com",
-        linkedin: "https://www.linkedin.com/in/iqra-abbasi",
-        image: IqraAbbasi,
+        name: "Ashutosh Singh Yadav",
+        year: "2027",
+        email: "ay182025@gmail.com",
+        linkedin: "https://www.linkedin.com/in/ashutosh-singh-yadav-2a462b2a7",
+        image: Ashutosh,
         position: "Field Officer"
       },
       {
-        name: "Sattwik Jana",
-        year: "2026",
-        email: "sattwijana@gmail.com",
-        linkedin: "https://www.linkedin.com/in/sattwik-jana",
-        image: SattwikJana,
+        name: "Dhruv kumar singh",
+        year: "2027",
+        email: "dhruvkumarsingh911@gmail.com",
+        linkedin: "https://www.linkedin.com/in/dhruv-kumar-singh-546363295",
+        image: Dhruv,
         position: "Field Officer"
       },
       {
-        name: "Anant Pandey",
-        year: "2026",
-        email: "anantpandey@gmail.com",
-        linkedin: "https://www.linkedin.com/in/anant-pandey",
-        image: AnantPandey,
+        name: "Vivek Kumar",
+        year: "2027",
+        email: "vivekkumar72.vv@gmail.com",
+        linkedin: "https://www.linkedin.com/in/vivek-kumar-6404202a4?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image: vivek,
         position: "Field Officer"
       },
       {
-        name: "Divya Mohan Kalhans",
-        year: "2026",
-        email: "divyakalhans@gmail.com",
-        linkedin: "https://www.linkedin.com/in/divya-mohan-kalhans",
-        image: DivyaMohanKalhans,
+        name: "Prajjwal Singh",
+        year: "2027",
+        email: "prajjwalit24@gmail.com",
+        linkedin: "https://www.linkedin.com/in/prajjwal-singh-05a915223",
+        image: prajjwal,
         position: "Field Officer"
       },
-      {
-        name: "Mitali Srivastava",
-        year: "2026",
-        email: "mitalisrivastava@gmail.com",
-        linkedin: "https://www.linkedin.com/in/mitali-srivastava",
-        image: MitaliSrivastava,
-        position: "Field Officer"
-      },
-      {
-        name: "Aditya Roysha",
-        year: "2026",
-        email: "adityaroysha@gmail.com",
-        linkedin: "https://www.linkedin.com/in/aditya-roysha",
-        image: AdityaRoysha,
-        position: "Field Officer"
-      }
+       {
+         name: "Neelakshi Pal",
+         year: "2027",
+         email: "iamneelakshi03@gmail.com",
+         linkedin: "www.linkedin.com/in/neelakshi-pal-486497287",
+         image: neelakshi,
+         position: "Field Officer"
+       },
+      
     ],
     alumni: []
   },
