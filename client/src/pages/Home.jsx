@@ -64,7 +64,7 @@ const HomePage = () => {
                   Explore Our Impact
                 </button>
                 <button
-                  onClick={() => navigate("/projects")}
+                  onClick={() => navigate("/project")}
                   className="px-8 py-4 text-lg font-semibold text-white border-2 border-white/50 hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-300 rounded-full backdrop-blur-sm"
                 >
                   View Projects
