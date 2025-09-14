@@ -44,6 +44,8 @@ import AparajitaSingh from '../assets/Teams/TeamMembers/DesignTeam/AparajitaSing
 import ShreyanshRathi from '../assets/Teams/TeamMembers/DesignTeam/Shreyansh Rathi.png';
 import AyushGupta from '../assets/Teams/TeamMembers/DesignTeam/Ayush Gupta 2.jpg';
 import AryanRaj from '../assets/Teams/TeamMembers/DesignTeam/Aryan_Raj.jpg';
+import GaganKumar from '../assets/Teams/TeamMembers/DesignTeam/Gagan Kumar.jpg';
+import Palakshi from '../assets/Teams/TeamMembers/DesignTeam/Palakshi.jpg';
 
 import HumanshiSingh from '../assets/Teams/TeamMembers/MarketingTeam/HumanshiSingh.jpg';
 import ShaghilJawed from '../assets/Teams/TeamMembers/MarketingTeam/ShaghilJawed.jpg';
@@ -372,22 +374,22 @@ export const teamData = {
         image: DivyanshuPurbey,
         position: "Designer"
       },
-      // {
-      //   name: "Gagan Kumar ",
-      //   year: "2026",
-      //   email: "gagan16903@gmail.com",
-      //   linkedin: "https://www.linkedin.com/in/gagan-kumar-128007259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      //   image:,
-      //   position: "Designer"
-      // },
-      // {
-      //   name: "Palakshi singh",
-      //   year: "2026",
-      //   email: "singhpalakshi157@gmail.com",
-      //   linkedin: "https://www.linkedin.com/in/ayush-gupta-201a21282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-      //   image: ,
-      //   position: "Designer"
-      // },
+      {
+        name: "Gagan Kumar ",
+        year: "2026",
+        email: "gagan16903@gmail.com",
+        linkedin: "https://www.linkedin.com/in/gagan-kumar-128007259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        image:GaganKumar,
+        position: "Designer"
+      },
+      {
+        name: "Palakshi singh",
+        year: "2026",
+        email: "singhpalakshi157@gmail.com",
+        linkedin: "https://www.linkedin.com/in/itsmepalakshi/",
+        image: Palakshi ,
+        position: "Designer"
+      },
       {
         name: "Rahul kharwar",
         year: "2026",
